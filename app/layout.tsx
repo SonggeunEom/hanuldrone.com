@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter as FontSans } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 
-const fontSans = FontSans({
-  subsets: ['latin'],
-  variable: '--font-sans',
-});
+import { SiteHeader } from '@/components/layouts/site-header';
+
+import { fontMono, pretendard } from '@/lib/font';
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: '한울드론 | 화재 감시 드론 & 의약품 배송 드론',
@@ -18,9 +17,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body
         className={cn(
-          'min-h-screen font-sans antialiased',
+          'font-sansSerif min-h-screen antialiased',
           'bg-gray-1100 overflow-y-scroll bg-[url("/pattern.svg")] pb-36',
-          fontSans.variable,
+          fontMono.variable,
+          pretendard.variable,
         )}
       >
         {children}
