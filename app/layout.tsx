@@ -22,7 +22,7 @@ export default function RootLayout({
       <body
         className={cn(
           'font-sansSerif min-h-screen antialiased',
-          'bg-gray-1100 overflow-y-scroll bg-[url("/pattern.svg")] pb-36',
+          'overflow-y-scroll bg-[url("/svg/pattern.svg")] pb-36 pt-2',
           fontMono.variable,
           pretendard.variable,
         )}
