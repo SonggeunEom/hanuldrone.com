@@ -8,6 +8,6 @@ module.exports = {
   semi: true,
   bracketSpacing: true,
   arrowParens: 'always',
-  printWidth: 100,
+  printWidth: 80,
   endOfLine: 'lf',
 };
