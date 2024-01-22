@@ -37,6 +37,6 @@ export const siteConfig = {
     ceo: '엄송근',
     address: '충청남도 태안군 남면 곰섬로 236-49, 216호(창업2관)',
     email: 'hanuldrone3@hanuldrone.com',
-    foundedYear: 2022,
+    foundedYear: 2023,
   },
 };
