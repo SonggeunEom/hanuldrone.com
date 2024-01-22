@@ -1,3 +1,4 @@
+import { Icons } from '@/components/icons';
 import { Shell } from '@/components/shell';
 
 import { cn } from '@/lib/utils';
@@ -29,7 +30,7 @@ export default function Home() {
                 'sm:text-6xl md:text-6xl lg:text-7xl',
               )}
             >
-              한울드론
+              드론으로 세상을 연결합니다
             </Balancer>
           </div>
           <Balancer
@@ -38,11 +39,13 @@ export default function Home() {
               'sm:text-xl sm:leading-8',
             )}
           >
-            드론을 활용한 실내외 시설 점검과 실시간 관제 기술을 제공합니다.
+            비가시권 실내외 시설 점검, 실시간 관제 기술, 도서산간 배송 서비스 등
+            다양한 서비스를 제공합니다.
           </Balancer>
-          <video autoPlay loop muted className="">
+          <video autoPlay loop muted>
             <source src="/video/hero.mp4" type="video/mp4" />
           </video>
+          <Icons.chevronsDown className="h-8 w-8" />
         </section>
       </Shell>
     </main>

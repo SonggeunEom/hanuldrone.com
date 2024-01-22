@@ -21,8 +21,8 @@ export const siteConfig = {
       ],
     },
     {
-      title: '활용 사례',
-      href: '/insights',
+      title: '소식',
+      href: '/news',
       items: [],
     },
     {
