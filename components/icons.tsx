@@ -1,4 +1,4 @@
-import { ChevronsDownIcon, LucideIcon } from 'lucide-react';
+import { ChevronsDownIcon, LucideIcon, MenuIcon } from 'lucide-react';
 
 type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -6,6 +6,7 @@ export const Icons: {
   [key: string]: ((props: IconProps) => JSX.Element) | LucideIcon;
 } = {
   chevronsDown: ChevronsDownIcon,
+  menuIcon: MenuIcon,
   companyLogo: (props: IconProps) => (
     <svg
       version="1.1"
