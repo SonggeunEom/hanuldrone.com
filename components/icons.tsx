@@ -15,7 +15,7 @@ export const Icons: {
       y="0px"
       width="100%"
       viewBox="0 0 524 145"
-      enable-background="new 0 0 524 145"
+      enableBackground="new 0 0 524 145"
       {...props}
     >
       <path

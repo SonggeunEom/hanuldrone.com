@@ -1,8 +1,5 @@
 export const siteConfig = {
   name: '한울드론',
-  description: 'hi',
-  url: 'http://localhost:3000',
-  ogImage: 'http://localhost:3000/og-image.png',
   mainMenus: [
     {
       title: '솔루션',
@@ -36,4 +33,10 @@ export const siteConfig = {
       items: [],
     },
   ],
+  footer: {
+    ceo: '엄송근',
+    address: '충청남도 태안군 남면 곰섬로 236-49, 216호(창업2관)',
+    email: 'hanuldrone3@hanuldrone.com',
+    foundedYear: 2022,
+  },
 };
