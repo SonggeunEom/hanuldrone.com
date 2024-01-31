@@ -28,9 +28,7 @@ export default function RootLayout({
           pretendard.variable,
         )}
       >
-        <SiteHeader />
         {children}
-        <SiteFooter />
       </body>
     </html>
   );

@@ -1,6 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import React from 'react';
+import { useRef } from 'react';
+
+import { motion, useScroll, useTransform } from 'framer-motion';
+
+import { SiteFooter } from '@/components/layouts/site-footer';
 
 import Balancer from 'react-wrap-balancer';
 import { Icons } from '@/components/icons';
@@ -8,11 +13,20 @@ import { Shell } from '@/components/shell';
 
 import { fadeIn, staggerContainer } from '@/lib/motion';
 import { cn } from '@/lib/utils';
+import { ScrollWrapper } from './scrollSections/scroll-wrapper';
 
 export default function Home() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start', 'end end'],
+  });
+
+  const transformedYProgress = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
+
   return (
     <main>
-      <Shell className="max-w-6xl">
+      {/* <Shell className="max-w-6xl">
         <section
           id="hero"
           aria-labelledby="hero-heading"
@@ -75,7 +89,46 @@ export default function Home() {
             </motion.p>
           </motion.div>
         </section>
-      </Shell>
+      </Shell> */}
+
+      <div>
+        {[1, 2, 3, 4, 5].map((image, index) => {
+          return index !== 4 ? (
+            <div key={index}>
+              <ScrollWrapper id={image} ref={ref} />
+            </div>
+          ) : (
+            <div key={index} className="snap-end">
+              <SiteFooter />
+            </div>
+          );
+        })}
+      </div>
+      {transformedYProgress.get() !== 1 && (
+        <div>
+          <figure className="fixed bottom-9 right-3">
+            <svg id="progress" width="50" height="50" viewBox="0 0 100 100">
+              <circle
+                cx="50"
+                cy="50"
+                r="30"
+                pathLength="1"
+                className="fill-none stroke-[2px] opacity-20"
+              />
+              <motion.circle
+                cx="50"
+                cy="50"
+                r="30"
+                pathLength="1"
+                className="stroke-red-400 stroke-[5px]"
+                style={{
+                  pathLength: transformedYProgress,
+                }}
+              />
+            </svg>
+          </figure>
+        </div>
+      )}
     </main>
   );
 }
