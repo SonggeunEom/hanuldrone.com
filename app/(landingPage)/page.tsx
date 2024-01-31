@@ -1,6 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import React from 'react';
+import { useRef } from 'react';
+
+import { motion, useScroll, useTransform } from 'framer-motion';
+
+import { SiteFooter } from '@/components/layouts/site-footer';
 
 import Balancer from 'react-wrap-balancer';
 import { Icons } from '@/components/icons';
@@ -8,29 +13,16 @@ import { Shell } from '@/components/shell';
 
 import { fadeIn, staggerContainer } from '@/lib/motion';
 import { cn } from '@/lib/utils';
+import { ScrollWrapper } from './scrollSections/scroll-wrapper';
 
 export default function Home() {
-  // const { scrollYProgress } = useScroll();
-  // const scaleX = useSpring(scrollYProgress, {
-  //   stiffness: 100,
-  //   damping: 30,
-  //   restDelta: 0.001,
-  // });
-
-  // const ref = useRef(null);
-  // const { scrollYProgress } = useScroll({
-  //   container: ref,
-  //   offset: ['end end', 'start start'],
-  // });
-
-  const ref = useRef(null);
-  const { scrollY, scrollYProgress } = useScroll({
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start end', 'center center'],
+    offset: ['start', 'end end'],
   });
-  console.log('🚀 / scrollY:', scrollY);
-  console.log('🚀 / scrollYProgress:', scrollYProgress);
-  // const y = useParallax(scrollYProgress, 300);
+
+  const transformedYProgress = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
 
   return (
     <main>
@@ -100,110 +92,43 @@ export default function Home() {
       </Shell> */}
 
       <div>
-        {[1, 2, 3, 4, 5].map((image) => (
-          <div>
-            <Image id={image} ref={ref} />
-            <div ref={ref}>
-              <figure className="absolute right-24">
-                <svg id="progress" width="75" height="75" viewBox="0 0 100 100">
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="30"
-                    pathLength="1"
-                    className="fill-none stroke-[2px] opacity-20"
-                  />
-                  <motion.circle
-                    cx="50"
-                    cy="50"
-                    r="30"
-                    pathLength="1"
-                    className="stroke-red-400 stroke-[5px]"
-                    style={{ pathLength: scrollYProgress }}
-                  />
-                </svg>
-              </figure>
+        {[1, 2, 3, 4, 5].map((image, index) => {
+          return index !== 4 ? (
+            <div key={index}>
+              <ScrollWrapper id={image} ref={ref} />
             </div>
-          </div>
-        ))}
-        {/* <motion.div className="fixed bottom-24 z-50  rotate-[-90deg] bg-slate-300">
-          <svg id="progress" width="100" height="100" viewBox="0 0 100 100">
-            <circle
-              cx="50"
-              cy="50"
-              r="30"
-              pathLength="1"
-              className="fill-none stroke-slate-400 stroke-1 opacity-30"
-            />
-            <motion.circle
-              cx="50"
-              cy="50"
-              r="30"
-              pathLength="1"
-              className="stroke-slate-200"
-              style={{ pathLength: scrollYProgress }}
-            />
-          </svg>
-        </motion.div> */}
-        {/* <motion.div
-          className="fixed bottom-24 z-50 h-2 w-full bg-black"
-          style={{ scaleX }}
-        /> */}
+          ) : (
+            <div key={index} className="snap-end">
+              <SiteFooter />
+            </div>
+          );
+        })}
       </div>
+      {transformedYProgress.get() !== 1 && (
+        <div>
+          <figure className="fixed bottom-9 right-3">
+            <svg id="progress" width="50" height="50" viewBox="0 0 100 100">
+              <circle
+                cx="50"
+                cy="50"
+                r="30"
+                pathLength="1"
+                className="fill-none stroke-[2px] opacity-20"
+              />
+              <motion.circle
+                cx="50"
+                cy="50"
+                r="30"
+                pathLength="1"
+                className="stroke-red-400 stroke-[5px]"
+                style={{
+                  pathLength: transformedYProgress,
+                }}
+              />
+            </svg>
+          </figure>
+        </div>
+      )}
     </main>
-  );
-}
-
-import { useRef } from 'react';
-
-import { useScroll, useTransform, MotionValue } from 'framer-motion';
-
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
-
-function Image({ id, ref }: { id: number; ref: any }) {
-  // const ref = useRef(null);
-  const { scrollYProgress, scrollY } = useScroll({
-    target: ref,
-    offset: ['end end', 'start start'],
-  });
-  const y = useParallax(scrollYProgress, 300);
-
-  return (
-    <section className="relative flex h-screen snap-center items-center justify-center">
-      <div
-        ref={ref}
-        className="relative m-5 h-96 max-h-[90vh] w-72 overflow-hidden"
-      >
-        <img
-          src={`/${id}.jpg`}
-          alt="A London skyscraper"
-          className="absolute bottom-0 left-0 right-0 top-0 h-full w-full"
-        />
-      </div>
-      <motion.h2 style={{ y }}>{`#00${id}`}</motion.h2>
-      {/* <div>
-        <figure className="">
-          <svg id="progress" width="75" height="75" viewBox="0 0 100 100">
-            <circle
-              cx="50"
-              cy="50"
-              r="30"
-              pathLength="1"
-              className="fill-none stroke-[2px] opacity-20"
-            />
-            <motion.circle
-              cx="50"
-              cy="50"
-              r="30"
-              pathLength="1"
-              className="stroke-red-400 stroke-[5px]"
-              style={{ pathLength: scrollY }}
-            />
-          </svg>
-        </figure>
-      </div> */}
-    </section>
   );
 }
