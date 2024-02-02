@@ -6,6 +6,16 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 import Balancer from 'react-wrap-balancer';
+import { ScrollWrapper } from './scrollSections/scroll-wrapper';
+import { Card, CardContent } from '@/components/ui/card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import { Button } from '@/components/ui/button';
 import { Icons } from '@/components/icons';
 import { SiteFooter } from '@/components/layouts/site-footer';
 
