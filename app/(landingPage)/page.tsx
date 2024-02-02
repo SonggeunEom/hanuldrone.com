@@ -107,20 +107,13 @@ export default function Home() {
       {transformedYProgress.get() !== 1 && (
         <div>
           <figure className="fixed bottom-9 right-3">
-            <svg id="progress" width="50" height="50" viewBox="0 0 100 100">
-              <circle
-                cx="50"
-                cy="50"
-                r="30"
-                pathLength="1"
-                className="fill-none stroke-[2px] opacity-20"
-              />
+            <svg width="50" height="50" viewBox="0 0 100 100">
               <motion.circle
                 cx="50"
                 cy="50"
                 r="30"
                 pathLength="1"
-                className="stroke-red-400 stroke-[5px]"
+                className="fill-sky-400 stroke-orange-300 stroke-[8px]"
                 style={{
                   pathLength: transformedYProgress,
                 }}
