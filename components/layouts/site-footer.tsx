@@ -22,7 +22,7 @@ export function SiteFooter() {
 
           <div className="mt-2 font-medium">
             ⓒ {siteConfig.footer.foundedYear}-{new Date().getFullYear()}{' '}
-            Hanuldrone inc.
+            Hanuldrone Inc.
           </div>
         </section>
       </Shell>
