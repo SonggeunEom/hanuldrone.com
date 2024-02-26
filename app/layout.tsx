@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-import { SiteHeader } from '@/components/layouts/site-header';
-
 import { fontMono, pretendard } from '@/lib/font';
 import { cn } from '@/lib/utils';
-import { SiteFooter } from '@/components/layouts/site-footer';
+
+import { SiteHeader } from '@/components/layouts/site-header';
+// TODO: Footer 기입
+// import { SiteFooter } from '@/components/layouts/site-footer';
 
 export const metadata: Metadata = {
   title: '한울드론 | 화재 감시 드론 & 의약품 배송 드론',
@@ -22,12 +23,13 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'font-sansSerif min-h-screen antialiased',
+          'min-h-screen font-sansSerif antialiased',
           'overflow-y-scroll bg-[url("/svg/pattern.svg")]',
           fontMono.variable,
           pretendard.variable,
         )}
       >
+        <SiteHeader />
         {children}
       </body>
     </html>
