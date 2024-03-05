@@ -21,6 +21,7 @@ import { SiteFooter } from '@/components/layouts/site-footer';
 
 import { cn } from '@/lib/utils';
 import { fadeIn } from '@/lib/motion';
+import Image from 'next/image';
 
 export default function Home() {
   const ref = useRef<HTMLElement>(null);
@@ -30,6 +31,12 @@ export default function Home() {
   });
 
   const transformedYProgress = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
+
+  const carouselTextList = [
+    '시설물 안전 점검',
+    '의약품 배송',
+    '화재 감시 및 초동 진압',
+  ];
 
   return (
     <main>
@@ -73,19 +80,27 @@ export default function Home() {
                 'sm:text-6xl md:text-6xl lg:text-7xl',
               )}
             >
-              드론으로 세상을 연결합니다
+              검증된 드론 솔루션을 제공합니다.
             </Balancer>
           </div>
           <Carousel className="w-full max-w-full">
             <CarouselContent>
-              {Array.from({ length: 5 }).map((_, index) => (
+              {Array.from({ length: 3 }).map((_, index) => (
                 <CarouselItem key={index} className="basis-2/5">
                   <div className="p-1">
                     <Card>
                       <CardContent className="flex aspect-square items-center justify-center p-6">
-                        <span className="text-4xl font-semibold">
-                          {index + 1}
-                        </span>
+                        <div className="relative inline-block h-full w-full">
+                          <p className="text-center text-lg md:text-4xl">
+                            {carouselTextList[index]}
+                          </p>
+                          <Image
+                            alt="Carousel image"
+                            src={`/image/carousel${index}.png`}
+                            layout="fill"
+                            objectFit="contain"
+                          />
+                        </div>
                       </CardContent>
                     </Card>
                   </div>
