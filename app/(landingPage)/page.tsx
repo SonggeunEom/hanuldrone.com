@@ -44,8 +44,8 @@ export default function Home() {
           >
             <source src="/video/hero.mp4" type="video/mp4" />
           </video>
-          <div className="absolute left-[7%] top-[57%] text-xl font-bold text-white md:text-6xl lg:text-6xl">
-            드론 기술로 미래를 이끕니다
+          <div className="absolute left-[7%] top-[62%] text-xl font-bold text-stone-300 md:text-6xl lg:text-6xl">
+            사람들이 필요로 할 때 나타나 한 줄기의 빛이 되기
           </div>
           <motion.div
             animate={{ y: [0, 15, 0], opacity: 1, scale: 1 }}
