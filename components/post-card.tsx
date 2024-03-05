@@ -13,9 +13,9 @@ import Link from 'next/link';
 
 type PostCardProps = {
   url: string;
-  thumbnail: string;
+  thumbnail?: string;
   title: string;
-  summary: string;
+  summary?: string;
   date: Date;
   writer: string;
 };
@@ -32,7 +32,11 @@ export function PostCard({
     <Card>
       <CardHeader>
         <Link href={url}>
-          <Image src={thumbnail} alt={thumbnail} width={400} height={200} />
+          {thumbnail ? (
+            <Image src={thumbnail} alt={thumbnail} width={400} height={200} />
+          ) : (
+            'x'
+          )}
           <CardTitle>{title}</CardTitle>
         </Link>
       </CardHeader>

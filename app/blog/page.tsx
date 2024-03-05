@@ -1,15 +1,5 @@
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+
 import Image from 'next/image';
 import { PostCard } from '@/components/post-card';
 
@@ -17,10 +7,6 @@ export default async function Blog() {
   const data = await extractMetaTags(
     'https://www.siminilbo.co.kr/news/newsview.php?ncode=1160267458084537',
   );
-  //  const data = await extractMetaTags(
-  //    'https://blog.naver.com/firehouse79/223326506356',
-  //  );
-  console.log('🚀 ~ data:', data);
 
   if (!data) {
     return <p>Failed to fetch link preview.</p>;
@@ -35,12 +21,13 @@ export default async function Blog() {
             width={200}
             height={150}
             priority={true}
+            className="hidden md:block"
           />
           <h1 className="text-xl font-bold text-stone-700 lg:text-4xl">
             뉴스 & 블로그
           </h1>
         </div>
-        <div className="w-full text-lg text-stone-600 lg:text-xl">
+        <div className="text-md w-full text-stone-600 md:text-lg lg:text-xl">
           한울드론의 새로운 소식을 알려드려요.
         </div>
       </div>
@@ -60,38 +47,29 @@ export default async function Blog() {
               블로그
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="news" className="grid grid-cols-3">
+          <TabsContent
+            value="news"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+          >
             <PostCard
-              url="https://www.google.com"
+              url="https://www.siminilbo.co.kr/news/newsview.php?ncode=1160267458084537"
               thumbnail={data.image}
               title={data.title}
-              summary={data.description}
               date={new Date()}
               writer={'엄송근'}
             />
           </TabsContent>
-          <TabsContent value="blog">
-            <Card>
-              <CardHeader>
-                <CardTitle>blog</CardTitle>
-                <CardDescription>
-                  Change your blog here. After saving, you be logged out.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="space-y-1">
-                  <Label htmlFor="current">Current password</Label>
-                  <Input id="current" type="password" />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="new">New password</Label>
-                  <Input id="new" type="password" />
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button>Save password</Button>
-              </CardFooter>
-            </Card>
+          <TabsContent
+            value="blog"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+          >
+            <PostCard
+              url="https://www.google.com"
+              thumbnail={data.image}
+              title={data.title}
+              date={new Date()}
+              writer={'TODO 블로그'}
+            />
           </TabsContent>
         </Tabs>
       </main>
