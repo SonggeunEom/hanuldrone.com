@@ -33,7 +33,7 @@ export default async function Blog() {
       </div>
       <main className="container flex justify-center">
         <Tabs defaultValue="news" className="w-full">
-          <TabsList className="grid h-12 w-full grid-cols-2 rounded-xl">
+          <TabsList className="mb-2 grid h-12 w-full grid-cols-2 rounded-xl">
             <TabsTrigger
               className="rounded-xl focus-visible:ring-sky-300 data-[state=active]:border-2 data-[state=active]:border-sky-300"
               value="news"
@@ -49,7 +49,7 @@ export default async function Blog() {
           </TabsList>
           <TabsContent
             value="news"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            className="mt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           >
             <PostCard
               url="https://www.siminilbo.co.kr/news/newsview.php?ncode=1160267458084537"
@@ -61,7 +61,7 @@ export default async function Blog() {
           </TabsContent>
           <TabsContent
             value="blog"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            className="mt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           >
             <PostCard
               url="https://www.google.com"
