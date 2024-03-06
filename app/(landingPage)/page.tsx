@@ -41,7 +41,7 @@ export default function Home() {
   return (
     <main>
       <ScrollWrapper ref={ref}>
-        <div className="">
+        <div>
           <video
             autoPlay
             loop
@@ -174,8 +174,8 @@ export default function Home() {
             </Balancer>
           </motion.div>
           <div>
-            <div className="flex space-x-8">
-              <div className="flex space-x-4 backdrop-blur-sm">
+            <div className="flex space-x-4">
+              <div className="flex basis-1/2 backdrop-blur-sm">
                 <div>
                   <Image
                     src={'/image/member-ceo.png'}
@@ -187,7 +187,7 @@ export default function Home() {
                 <div>
                   <p
                     className={cn(
-                      'text-md font-bold',
+                      'whitespace-nowrap text-sm font-bold',
                       'sm:text-lg md:text-xl lg:text-2xl',
                     )}
                   >
@@ -207,12 +207,11 @@ export default function Home() {
                       'sm:text-md md:text-lg lg:text-xl',
                     )}
                   >
-                    한서대학교 무인항공기학 학사와 무인항공기시스템공학 석사를
-                    졸업하였습니다.
+                    인공지능, 데이터 분석
                   </p>
                 </div>
               </div>
-              <div className="flex backdrop-blur-sm">
+              <div className="flex basis-1/2 backdrop-blur-sm">
                 <div>
                   <Image
                     src={'/image/member-cto.png'}
@@ -224,7 +223,7 @@ export default function Home() {
                 <div>
                   <p
                     className={cn(
-                      'text-md font-bold',
+                      'whitespace-nowrap text-sm font-bold',
                       'sm:text-lg md:text-xl lg:text-2xl',
                     )}
                   >
@@ -232,11 +231,11 @@ export default function Home() {
                   </p>
                   <p
                     className={cn(
-                      'text-sm text-stone-600',
+                      'text-xs text-stone-600',
                       'sm:text-md md:text-lg lg:text-xl',
                     )}
                   >
-                    CEO
+                    CTO
                   </p>
                   <p
                     className={cn(
@@ -244,8 +243,7 @@ export default function Home() {
                       'sm:text-md md:text-lg lg:text-xl',
                     )}
                   >
-                    한서대학교 무인항공기학 학사와 무인항공기시스템공학 석사를
-                    졸업하였습니다.
+                    편대 비행, 충돌 회피
                   </p>
                 </div>
               </div>
