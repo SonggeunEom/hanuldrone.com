@@ -81,7 +81,7 @@ export default function Home() {
             <Balancer
               as="h1"
               className={cn(
-                'relative text-xl',
+                'relative text-xl font-extrabold',
                 'sm:text-3xl md:text-4xl lg:text-5xl',
               )}
             >
@@ -150,7 +150,7 @@ export default function Home() {
             <Balancer
               as="h1"
               className={cn(
-                'relative text-xl',
+                'relative text-xl font-extrabold',
                 'sm:text-3xl md:text-4xl lg:text-5xl',
               )}
             >
@@ -164,6 +164,7 @@ export default function Home() {
             viewport={{ once: false, amount: 0.25 }}
           >
             <Balancer
+              as="h2"
               className={cn(
                 'text-md max-w-[42rem] leading-normal text-muted-foreground',
                 'sm:text-lg md:text-xl lg:text-2xl',
