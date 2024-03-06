@@ -2,7 +2,7 @@ export const siteConfig = {
   name: '한울드론',
   mainMenus: [
     {
-      title: '솔루션',
+      title: '솔루션(임시)',
       href: '/solutions',
       submenus: [
         {
@@ -19,17 +19,12 @@ export const siteConfig = {
     },
     {
       title: '소식',
-      href: '/news',
-      items: [],
-    },
-    {
-      title: '블로그',
       href: '/blog',
       items: [],
     },
     {
-      title: '채용',
-      href: '/career',
+      title: '팀 소개(임시)',
+      href: '/team',
       items: [],
     },
   ],
