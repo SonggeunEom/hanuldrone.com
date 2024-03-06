@@ -100,7 +100,7 @@ export default function Home() {
                             alt="Carousel image"
                             src={`/image/carousel${index}.png`}
                             layout="fill"
-                            objectFit="contain"
+                            className="object-cover"
                           />
                         </div>
                         <p
