@@ -94,7 +94,7 @@ export default function Home() {
                 <CarouselItem key={index} className="basis-2/5">
                   <div>
                     <Card>
-                      <CardContent className="aspect-square flex-col items-center justify-center">
+                      <CardContent className="aspect-video flex-col items-center justify-center pt-6">
                         <div className="relative inline-block h-full max-h-96 w-full max-w-lg">
                           <Image
                             alt="Carousel image"
@@ -128,7 +128,7 @@ export default function Home() {
           >
             <Balancer
               className={cn(
-                'text-md max-w-[42rem] leading-normal text-muted-foreground',
+                'text-md max-w-[42rem] leading-normal text-muted-foreground backdrop-blur-sm',
                 'sm:text-lg md:text-xl lg:text-2xl',
               )}
             >
@@ -172,11 +172,89 @@ export default function Home() {
               무인항공기 하나만 바라본 전문가들이 만듭니다.
             </Balancer>
           </motion.div>
+          <div>
+            <div className="flex space-x-8">
+              <div className="flex space-x-4 backdrop-blur-sm">
+                <div>
+                  <Image
+                    src={'/image/member-ceo.png'}
+                    alt={'caricature of member'}
+                    width={360}
+                    height={360}
+                  />
+                </div>
+                <div>
+                  <p
+                    className={cn(
+                      'text-md font-bold',
+                      'sm:text-lg md:text-xl lg:text-2xl',
+                    )}
+                  >
+                    엄송근
+                  </p>
+                  <p
+                    className={cn(
+                      'text-sm text-stone-600',
+                      'sm:text-md md:text-lg lg:text-xl',
+                    )}
+                  >
+                    CEO
+                  </p>
+                  <p
+                    className={cn(
+                      'mt-4 text-sm',
+                      'sm:text-md md:text-lg lg:text-xl',
+                    )}
+                  >
+                    한서대학교 무인항공기학 학사와 무인항공기시스템공학 석사를
+                    졸업하였습니다.
+                  </p>
+                </div>
+              </div>
+              <div className="flex backdrop-blur-sm">
+                <div>
+                  <Image
+                    src={'/image/member-cto.png'}
+                    alt={'caricature of member'}
+                    width={360}
+                    height={360}
+                  />
+                </div>
+                <div>
+                  <p
+                    className={cn(
+                      'text-md font-bold',
+                      'sm:text-lg md:text-xl lg:text-2xl',
+                    )}
+                  >
+                    김정훈
+                  </p>
+                  <p
+                    className={cn(
+                      'text-sm text-stone-600',
+                      'sm:text-md md:text-lg lg:text-xl',
+                    )}
+                  >
+                    CEO
+                  </p>
+                  <p
+                    className={cn(
+                      'mt-4 text-sm',
+                      'sm:text-md md:text-lg lg:text-xl',
+                    )}
+                  >
+                    한서대학교 무인항공기학 학사와 무인항공기시스템공학 석사를
+                    졸업하였습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </ScrollWrapper>
 
       <ScrollWrapper>
-        <ol className="relative left-8 top-8 border-l border-stone-200">
+        <ol className="relative left-8 top-8 border-l border-stone-200 backdrop-blur-sm">
           <li className="mb-10 ml-6">
             <div>
               <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-stone-300"></div>
@@ -230,7 +308,8 @@ export default function Home() {
             </div>
           </li>
         </ol>
-        <video
+        {/* Fire fighter drone ai generated video */}
+        {/* <video
           autoPlay
           loop
           muted
@@ -241,7 +320,7 @@ export default function Home() {
           )}
         >
           <source src="/video/fire-fighting-drone.mp4" type="video/mp4" />
-        </video>
+        </video> */}
       </ScrollWrapper>
 
       <div className="snap-end">
