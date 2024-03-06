@@ -87,13 +87,10 @@ export default function Home() {
             <CarouselContent>
               {Array.from({ length: 3 }).map((_, index) => (
                 <CarouselItem key={index} className="basis-2/5">
-                  <div className="p-1">
+                  <div>
                     <Card>
-                      <CardContent className="flex aspect-square items-center justify-center p-6">
-                        <div className="relative inline-block h-full w-full">
-                          <p className="text-center text-lg md:text-4xl">
-                            {carouselTextList[index]}
-                          </p>
+                      <CardContent className="aspect-square flex-col items-center justify-center">
+                        <div className="relative inline-block h-full max-h-96 w-full max-w-lg">
                           <Image
                             alt="Carousel image"
                             src={`/image/carousel${index}.png`}
@@ -101,6 +98,9 @@ export default function Home() {
                             objectFit="contain"
                           />
                         </div>
+                        <p className="text-center text-lg md:text-4xl">
+                          {carouselTextList[index]}
+                        </p>
                       </CardContent>
                     </Card>
                   </div>
