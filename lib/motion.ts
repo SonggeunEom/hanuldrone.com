@@ -5,7 +5,12 @@ interface FadeInOptions {
   duration: number;
 }
 
-export const fadeIn = (direction, type, delay, duration) => ({
+export const fadeIn = ({
+  direction,
+  type,
+  delay,
+  duration,
+}: FadeInOptions) => ({
   hidden: {
     x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,
     y: direction === 'up' ? 100 : direction === 'down' ? -100 : 0,

@@ -99,8 +99,8 @@ export default function Home() {
                           <Image
                             alt="Carousel image"
                             src={`/image/carousel${index}.png`}
-                            layout="fill"
                             className="object-cover"
+                            fill
                           />
                         </div>
                         <p
@@ -121,10 +121,15 @@ export default function Home() {
             <CarouselNext />
           </Carousel>
           <motion.p
-            variants={fadeIn('up', 'tween', 0.2, 1)}
+            variants={fadeIn({
+              direction: 'up',
+              type: 'tween',
+              delay: 0.2,
+              duration: 0.5,
+            })}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.25 }}
           >
             <Balancer
               className={cn(
@@ -154,14 +159,19 @@ export default function Home() {
                 'sm:text-3xl md:text-4xl lg:text-5xl',
               )}
             >
-              - 한울드론 팀 구성
+              한울드론 팀 구성
             </Balancer>
           </div>
           <motion.div
-            variants={fadeIn('up', 'tween', 0.2, 1)}
+            variants={fadeIn({
+              direction: 'up',
+              type: 'tween',
+              delay: 0.2,
+              duration: 0.5,
+            })}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.25 }}
           >
             <Balancer
               as="h2"
