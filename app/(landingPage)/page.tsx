@@ -54,10 +54,10 @@ export default function Home() {
           <div
             className={cn(
               'absolute left-[7%] top-[55%] text-lg font-bold text-stone-300',
-              'sm:text-2xl md:text-3xl lg:top-[62%] lg:text-5xl xl:top-[70%]',
+              'sm:text-2xl md:text-3xl lg:top-[62%] lg:text-5xl xl:top-[66%]',
             )}
           >
-            사람들이 필요로 할 때 나타나 한 줄기의 빛이 되기
+            어둠을 밝히는 혁신의 빛, (주) 한울드론
           </div>
           <motion.div
             animate={{ y: [0, 15, 0], opacity: 1, scale: 1 }}
@@ -85,7 +85,7 @@ export default function Home() {
                 'sm:text-3xl md:text-4xl lg:text-5xl',
               )}
             >
-              - 검증된 드론 솔루션을 제공 드립니다.
+              검증된 드론 솔루션을 제공 드립니다.
             </Balancer>
           </div>
           <Carousel className="w-full max-w-full">
@@ -99,8 +99,8 @@ export default function Home() {
                           <Image
                             alt="Carousel image"
                             src={`/image/carousel${index}.png`}
-                            layout="fill"
                             className="object-cover"
+                            fill
                           />
                         </div>
                         <p
@@ -121,10 +121,15 @@ export default function Home() {
             <CarouselNext />
           </Carousel>
           <motion.p
-            variants={fadeIn('up', 'tween', 0.2, 1)}
+            variants={fadeIn({
+              direction: 'up',
+              type: 'tween',
+              delay: 0.2,
+              duration: 0.5,
+            })}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.25 }}
           >
             <Balancer
               className={cn(
@@ -154,14 +159,19 @@ export default function Home() {
                 'sm:text-3xl md:text-4xl lg:text-5xl',
               )}
             >
-              - 한울드론 팀 구성
+              한울드론 팀 구성
             </Balancer>
           </div>
           <motion.div
-            variants={fadeIn('up', 'tween', 0.2, 1)}
+            variants={fadeIn({
+              direction: 'up',
+              type: 'tween',
+              delay: 0.2,
+              duration: 0.5,
+            })}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.25 }}
           >
             <Balancer
               as="h2"
@@ -199,7 +209,7 @@ export default function Home() {
                       'sm:text-md md:text-lg lg:text-xl',
                     )}
                   >
-                    CEO
+                    Founder & CEO
                   </p>
                   <p
                     className={cn(
@@ -207,7 +217,7 @@ export default function Home() {
                       'sm:text-md md:text-lg lg:text-xl',
                     )}
                   >
-                    인공지능, 데이터 분석
+                    TODO: 한마디가 들어갈 자리입니다.
                   </p>
                 </div>
               </div>
@@ -235,7 +245,7 @@ export default function Home() {
                       'sm:text-md md:text-lg lg:text-xl',
                     )}
                   >
-                    CTO
+                    Co-Founder & CTO
                   </p>
                   <p
                     className={cn(
@@ -243,7 +253,7 @@ export default function Home() {
                       'sm:text-md md:text-lg lg:text-xl',
                     )}
                   >
-                    편대 비행, 충돌 회피
+                    TODO: 한마디가 들어갈 자리입니다.
                   </p>
                 </div>
               </div>
@@ -260,14 +270,14 @@ export default function Home() {
               <div className="flex h-full w-0.5 bg-gray-200" />
             </div>
             <div>
-              <time className="mb-1 text-sm font-normal leading-none text-stone-400">
-                2024
+              <time className="mb-1 text-sm font-normal leading-none text-stone-600">
+                2024.03
               </time>
               <h3 className="text-lg font-semibold text-stone-900">
-                한울드론 비상
+                디지털 물류서비스 실증 사업
               </h3>
               <div className="mb-4 text-base font-normal text-stone-500 ">
-                날개를 펴고 날아가는 청룡의 해
+                VTOL 의약품 배송 분야, 국토교통부 주관
               </div>
             </div>
           </li>
@@ -277,16 +287,16 @@ export default function Home() {
               <div className="flex h-full w-0.5 bg-gray-200" />
             </div>
             <div>
-              <time className="mb-1 text-sm font-normal leading-none text-stone-400">
-                2023
+              <time className="mb-1 text-sm font-normal leading-none text-stone-600">
+                2024.03
               </time>
               <h3 className="text-lg font-semibold text-stone-900">
-                한울드론 개고생
+                드론 실증 도시 구축 사업(서산)
               </h3>
               <div className="mb-4 text-base font-normal text-stone-500 ">
-                여러 실증 사업에 참여
+                물품 배송 분야 사업자 선정
               </div>
-              <Button>더 알아보기 →</Button>
+              {/* <Button>더 알아보기 →</Button> */}
             </div>
           </li>
           <li className="mb-10 ml-6">
@@ -295,15 +305,63 @@ export default function Home() {
               <div className="flex h-full w-0.5 bg-gray-200" />
             </div>
             <div>
-              <time className="mb-1 text-sm font-normal leading-none text-stone-400">
-                2022
+              <time className="mb-1 text-sm font-normal leading-none text-stone-600">
+                2023.12
               </time>
               <h3 className="text-lg font-semibold text-stone-900">
-                한울드론 창립
+                벤처기업 인증
               </h3>
               <div className="mb-4 text-base font-normal text-stone-500 ">
-                2022년 겨울, 창립
+                중소벤처기업부
               </div>
+            </div>
+          </li>
+          <li className="mb-10 ml-6">
+            <div>
+              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-stone-300"></div>
+              <div className="flex h-full w-0.5 bg-gray-200" />
+            </div>
+            <div>
+              <time className="mb-1 text-sm font-normal leading-none text-stone-600">
+                2023.04
+              </time>
+              <h3 className="text-lg font-semibold text-stone-900">
+                드론 실증도시 구축 사업(서산, 태안)
+              </h3>
+              <div className="mb-4 text-base font-normal text-stone-500 ">
+                초기 화재 감시 및 진압 분야, VTOL 의약품 배송 분야
+              </div>
+            </div>
+          </li>
+          <li className="mb-10 ml-6">
+            <div>
+              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-stone-300"></div>
+              <div className="flex h-full w-0.5 bg-gray-200" />
+            </div>
+            <div>
+              <time className="mb-1 text-sm font-normal leading-none text-stone-600">
+                2023.03
+              </time>
+              <h3 className="text-lg font-semibold text-stone-900">
+                청년창업사관학교 기업 선정
+              </h3>
+              <div className="mb-4 text-base font-normal text-stone-500 ">
+                중소벤처기업부
+              </div>
+            </div>
+          </li>
+          <li className="mb-10 ml-6">
+            <div>
+              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-stone-300"></div>
+              <div className="flex h-full w-0.5 bg-gray-200" />
+            </div>
+            <div>
+              <time className="mb-1 text-sm font-normal leading-none text-stone-600">
+                2022.12
+              </time>
+              <h3 className="text-lg font-semibold text-stone-900">
+                한울드론 법인 설립
+              </h3>
             </div>
           </li>
         </ol>
