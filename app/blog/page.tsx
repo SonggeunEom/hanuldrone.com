@@ -73,11 +73,13 @@ export default async function Blog() {
           </TabsContent>
         </Tabs>
       </main>
+      <SiteFooter />
     </>
   );
 }
 
 import { JSDOM } from 'jsdom';
+import { SiteFooter } from '@/components/layouts/site-footer';
 
 const extractMetaTags = async (url: string) => {
   try {

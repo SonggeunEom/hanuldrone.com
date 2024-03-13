@@ -15,7 +15,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import { Button } from '@/components/ui/button';
 import { Icons } from '@/components/icons';
 import { SiteFooter } from '@/components/layouts/site-footer';
 
@@ -36,6 +35,36 @@ export default function Home() {
     '시설물 안전 점검',
     '의약품 배송',
     '화재 감시 및 진압',
+  ];
+
+  const solutionsInfo = [
+    {
+      imgSrc: '/image/solution0.jpg',
+      imgText: '시설물 안전 점검',
+      title: '결함 탐지 드론',
+      description:
+        'AI 영상 처리를 통한 손상 및 결함을 탐지합니다. GPS 단절 환경에서도 무사히 임무를 완수합니다.',
+    },
+    {
+      imgSrc: '/image/solution1.jpg',
+      imgText: '의약품 배송',
+      title: '화물 배송 드론',
+      description:
+        '화물 보호 기능을 갖춘 배송함을 탑재하여 다양한 화물을 배송합니다.',
+    },
+    {
+      imgSrc: '/image/solution2.jpg',
+      imgText: '3번 솔루션',
+      title: '3번 드론',
+      description: '3번 솔루션 소개',
+    },
+    {
+      imgSrc: '/image/solution3.jpg',
+      imgText: '화재 감시 및 진압',
+      title: ' eVTOL 소방 드론',
+      description:
+        '드론 기반 광범위 화재를 감시하며 소화탄 투하하여 초동 진압에 나섭니다.',
+    },
   ];
 
   return (
@@ -70,7 +99,7 @@ export default function Home() {
       </ScrollWrapper>
 
       <ScrollWrapper ref={ref}>
-        <div className="relative h-1/2 w-3/4 space-y-12">
+        <div className="relative h-3/4 w-3/4">
           <div
             className={cn(
               'relative z-[-1] flex place-items-center after:absolute after:-z-20',
@@ -88,7 +117,7 @@ export default function Home() {
               검증된 드론 솔루션을 제공 드립니다.
             </Balancer>
           </div>
-          <Carousel className="w-full max-w-full">
+          {/* <Carousel className="w-full max-w-full">
             <CarouselContent>
               {Array.from({ length: 3 }).map((_, index) => (
                 <CarouselItem key={index} className="basis-2/5">
@@ -119,8 +148,58 @@ export default function Home() {
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />
-          </Carousel>
-          <motion.p
+          </Carousel> */}{' '}
+          <main
+            className={cn(
+              'my-2 grid grid-cols-1 gap-4 text-center',
+              'lg:grid-cols-2',
+            )}
+          >
+            {solutionsInfo.map((solution, index) => {
+              return (
+                <div key={index} className="backdrop-blur-sm">
+                  <div
+                    className={cn(
+                      'max-h-[120px] overflow-hidden',
+                      'sm:max-h-[320px]',
+                    )}
+                  >
+                    <Image
+                      src={solution.imgSrc}
+                      alt={solution.imgText}
+                      width={640}
+                      height={400}
+                    />
+                    <div
+                      className={cn(
+                        'absolute left-1/2 top-1/2 h-1/2 w-1/2 translate-x-[-50%] translate-y-[-66%] bg-stone-800/75',
+                        'flex items-center justify-center',
+                      )}
+                    >
+                      <p
+                        className={cn(
+                          'text-2xl font-extrabold text-white',
+                          'lg:text-3xl xl:text-4xl',
+                        )}
+                      >
+                        {solution.imgText}
+                      </p>
+                    </div>
+                  </div>
+                  <h3
+                    className={cn(
+                      'text-xl font-bold tracking-widest',
+                      'lg:text-2xl xl:text-3xl',
+                    )}
+                  >
+                    {solution.title}
+                  </h3>
+                  <p className="text-stone-600">{solution.description}</p>
+                </div>
+              );
+            })}
+          </main>
+          {/* <motion.p
             variants={fadeIn({
               direction: 'up',
               type: 'tween',
@@ -139,7 +218,7 @@ export default function Home() {
             >
               여러 성공적인 실증 사업 추진 경험을 바탕으로 인정 받고 있습니다.
             </Balancer>
-          </motion.p>
+          </motion.p> */}
         </div>
       </ScrollWrapper>
 
@@ -263,6 +342,19 @@ export default function Home() {
       </ScrollWrapper>
 
       <ScrollWrapper>
+        <div className="mr-8">
+          <div>TODO: 기업 비전이 들어갈 자리</div>
+          <div>TODO: 기업 비전이 들어갈 자리</div>
+          <div>TODO: 기업 비전이 들어갈 자리</div>
+          <div>TODO: 기업 비전이 들어갈 자리</div>
+          <div>TODO: 기업 비전이 들어갈 자리</div>
+          <div>TODO: 기업 비전이 들어갈 자리</div>
+          <div>TODO: 기업 비전이 들어갈 자리</div>
+          <div>TODO: 기업 비전이 들어갈 자리</div>
+          <div>TODO: 기업 비전이 들어갈 자리</div>
+          <div>TODO: 기업 비전이 들어갈 자리</div>
+          <div>TODO: 기업 비전이 들어갈 자리</div>
+        </div>
         <ol className="relative left-8 top-8 border-l border-stone-200 backdrop-blur-sm">
           <li className="mb-10 ml-6">
             <div>
