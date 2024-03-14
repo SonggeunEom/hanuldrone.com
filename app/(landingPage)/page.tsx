@@ -21,6 +21,7 @@ import { SiteFooter } from '@/components/layouts/site-footer';
 import { cn } from '@/lib/utils';
 import { fadeIn } from '@/lib/motion';
 import Image from 'next/image';
+import Timeline from '@/components/timeline';
 
 export default function Home() {
   const ref = useRef<HTMLElement>(null);
@@ -349,108 +350,37 @@ export default function Home() {
           <div>TODO: 기업 비전이 들어갈 자리</div>
           <div>TODO: 기업 비전이 들어갈 자리</div>
         </div>
-        <ol className="relative left-8 top-8 border-l border-stone-200 backdrop-blur-sm">
-          <li className="mb-10 ml-6">
-            <div>
-              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-stone-300"></div>
-              <div className="flex h-full w-0.5 bg-gray-200" />
-            </div>
-            <div>
-              <time className="mb-1 text-sm font-normal leading-none text-stone-600">
-                2024.03
-              </time>
-              <h3 className="text-lg font-semibold text-stone-900">
-                디지털 물류서비스 실증 사업
-              </h3>
-              <div className="mb-4 text-base font-normal text-stone-500 ">
-                VTOL 의약품 배송 분야, 국토교통부 주관
-              </div>
-            </div>
-          </li>
-          <li className="mb-10 ml-6">
-            <div>
-              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-stone-300"></div>
-              <div className="flex h-full w-0.5 bg-gray-200" />
-            </div>
-            <div>
-              <time className="mb-1 text-sm font-normal leading-none text-stone-600">
-                2024.03
-              </time>
-              <h3 className="text-lg font-semibold text-stone-900">
-                드론 실증 도시 구축 사업(서산)
-              </h3>
-              <div className="mb-4 text-base font-normal text-stone-500 ">
-                물품 배송 분야 사업자 선정
-              </div>
-              {/* <Button>더 알아보기 →</Button> */}
-            </div>
-          </li>
-          <li className="mb-10 ml-6">
-            <div>
-              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-stone-300"></div>
-              <div className="flex h-full w-0.5 bg-gray-200" />
-            </div>
-            <div>
-              <time className="mb-1 text-sm font-normal leading-none text-stone-600">
-                2023.12
-              </time>
-              <h3 className="text-lg font-semibold text-stone-900">
-                벤처기업 인증
-              </h3>
-              <div className="mb-4 text-base font-normal text-stone-500 ">
-                중소벤처기업부
-              </div>
-            </div>
-          </li>
-          <li className="mb-10 ml-6">
-            <div>
-              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-stone-300"></div>
-              <div className="flex h-full w-0.5 bg-gray-200" />
-            </div>
-            <div>
-              <time className="mb-1 text-sm font-normal leading-none text-stone-600">
-                2023.04
-              </time>
-              <h3 className="text-lg font-semibold text-stone-900">
-                드론 실증도시 구축 사업(서산, 태안)
-              </h3>
-              <div className="mb-4 text-base font-normal text-stone-500 ">
-                초기 화재 감시 및 진압 분야, VTOL 의약품 배송 분야
-              </div>
-            </div>
-          </li>
-          <li className="mb-10 ml-6">
-            <div>
-              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-stone-300"></div>
-              <div className="flex h-full w-0.5 bg-gray-200" />
-            </div>
-            <div>
-              <time className="mb-1 text-sm font-normal leading-none text-stone-600">
-                2023.03
-              </time>
-              <h3 className="text-lg font-semibold text-stone-900">
-                청년창업사관학교 기업 선정
-              </h3>
-              <div className="mb-4 text-base font-normal text-stone-500 ">
-                중소벤처기업부
-              </div>
-            </div>
-          </li>
-          <li className="mb-10 ml-6">
-            <div>
-              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-stone-300"></div>
-              <div className="flex h-full w-0.5 bg-gray-200" />
-            </div>
-            <div>
-              <time className="mb-1 text-sm font-normal leading-none text-stone-600">
-                2022.12
-              </time>
-              <h3 className="text-lg font-semibold text-stone-900">
-                한울드론 법인 설립
-              </h3>
-            </div>
-          </li>
-        </ol>
+        <Timeline
+          items={[
+            {
+              dateTime: '2024-03',
+              label: '디지털 물류서비스 실증 사업',
+              description: 'VTOL 의약품 배송 분야, 국토교통부 주관',
+            },
+            {
+              dateTime: '2024-03',
+              label: '드론 실증 도시 구축 사업(서산)',
+              description: '물품 배송 분야 사업자 선정',
+            },
+            {
+              dateTime: '2023-12',
+              label: '벤처기업 인증',
+              description: '중소벤처기업부',
+            },
+            {
+              dateTime: '2023-04',
+              label: '드론 실증도시 구축 사업(서산, 태안)',
+              description: '초기 화재 감시 및 진압 분야, VTOL 의약품 배송 분야',
+            },
+            {
+              dateTime: '2023-03',
+              label: '청년창업사관학교 기업 선정',
+              description: '중소벤처기업부',
+            },
+            { dateTime: '2022-12', label: '한울드론 법인 설립' },
+          ]}
+        />
+
         {/* Fire fighter drone ai generated video */}
         {/* <video
           autoPlay
