@@ -355,7 +355,7 @@ export default function Home() {
             {
               dateTime: '2024-03',
               label: '디지털 물류서비스 실증 사업',
-              description: 'VTOL 의약품 배송 분야, 국토교통부 주관',
+              description: 'VTOL 의약품 배송 분야\n국토교통부 주관',
             },
             {
               dateTime: '2024-03',
@@ -370,7 +370,7 @@ export default function Home() {
             {
               dateTime: '2023-04',
               label: '드론 실증도시 구축 사업(서산, 태안)',
-              description: '초기 화재 감시 및 진압 분야, VTOL 의약품 배송 분야',
+              description: '초기 화재 감시 및 진압 분야\nVTOL 의약품 배송 분야',
             },
             {
               dateTime: '2023-03',

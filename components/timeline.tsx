@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import React from 'react';
 
 interface TimelineItem {
@@ -26,22 +27,38 @@ const TimelineItem: React.FC<{ item: TimelineItem }> = ({ item }) => {
   const { dateTime, label, description } = item;
 
   return (
-    <li className="mb-10 ml-6">
+    <li className={cn('mb-5 ml-3', 'md:mb-10 md:ml-6')}>
       <div>
         <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-stone-300"></div>
-        <div className="flex h-full w-0.5 bg-gray-200" />
       </div>
-      <div>
+      <div className="whitespace-pre-wrap">
         {dateTime && (
-          <time className="mb-1 text-sm font-normal leading-none text-stone-600">
+          <time
+            className={cn(
+              'mb-1 text-xs font-normal leading-none text-stone-600',
+              'sm:text-sm md:text-base lg:text-lg',
+            )}
+          >
             {dateTime}
           </time>
         )}
-        <h3 className="text-lg font-semibold text-stone-900">{label}</h3>
+        <h3
+          className={cn(
+            'text-sm font-semibold text-stone-900',
+            'sm:text-base md:text-lg lg:text-xl',
+          )}
+        >
+          {label}
+        </h3>
         {description && (
-          <div className="mb-4 text-base font-normal text-stone-500 ">
+          <p
+            className={cn(
+              'mb-4 text-xs font-normal text-stone-500',
+              'sm:text-sm md:text-base lg:text-lg',
+            )}
+          >
             {description}
-          </div>
+          </p>
         )}
       </div>
     </li>
