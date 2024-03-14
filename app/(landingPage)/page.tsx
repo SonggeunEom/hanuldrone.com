@@ -88,13 +88,7 @@ export default function Home() {
           >
             어둠을 밝히는 혁신의 빛, (주) 한울드론
           </div>
-          <motion.div
-            animate={{ y: [0, 15, 0], opacity: 1, scale: 1 }}
-            transition={{ repeat: Infinity, duration: 2.5 }}
-            className="mx-auto mt-8 w-fit"
-          >
-            <Icons.chevronsDown className="h-8 w-8" />
-          </motion.div>
+          <Icons.chevronsDown className="mx-auto mt-10 h-8 w-8 animate-bounce" />
         </div>
       </ScrollWrapper>
 
