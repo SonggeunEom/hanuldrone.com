@@ -352,6 +352,117 @@ export default function Home() {
       </ScrollWrapper>
 
       <div className="snap-end">
+        <div className="mx-auto my-8 text-center lg:w-3/4">
+          <div className="mt-36 text-center lg:mt-32">
+            <span className="text-lg font-semibold tracking-wider text-stone-600 dark:text-white">
+              PARTNER
+            </span>
+            <div className="slider">
+              <div className="slide-track-5 hover:pause mt-6 grid grid-cols-3 items-center justify-around gap-8 sm:grid-cols-4 md:grid-cols-5">
+                <div key="0">
+                  <div className="flex items-center text-lg font-semibold hover:scale-110">
+                    <Image
+                      src={'/image/logo4.png'}
+                      alt="에어온"
+                      width={190}
+                      height={50}
+                    />
+                  </div>
+                </div>
+                <div key="1">
+                  <div className="flex items-center text-lg font-semibold hover:scale-110">
+                    <Image
+                      src={'/image/logo3.jpg'}
+                      alt="한서대학교"
+                      width={200}
+                      height={55}
+                    />
+                  </div>
+                </div>
+                <div key="2">
+                  <div className="flex items-center text-lg font-semibold hover:scale-110">
+                    <Image
+                      src={'/image/logo0.jpg'}
+                      alt="국토부"
+                      width={194}
+                      height={72}
+                    />
+                  </div>
+                </div>
+                <div key="3">
+                  <div className="flex items-center text-lg font-semibold hover:scale-110">
+                    <Image
+                      src={'/image/logo1.png'}
+                      alt="서산시"
+                      width={200}
+                      height={50}
+                    />
+                  </div>
+                </div>
+                <div key="4">
+                  <div className="flex items-center text-lg font-semibold hover:scale-110">
+                    <Image
+                      src={'/image/logo2.jpg'}
+                      alt="태안군"
+                      width={140}
+                      height={80}
+                    />
+                  </div>
+                </div>
+                <div key="0">
+                  <div className="flex items-center text-lg font-semibold hover:scale-110">
+                    <Image
+                      src={'/image/logo4.png'}
+                      alt="에어온"
+                      width={190}
+                      height={50}
+                    />
+                  </div>
+                </div>
+                <div key="1">
+                  <div className="flex items-center text-lg font-semibold hover:scale-110">
+                    <Image
+                      src={'/image/logo3.jpg'}
+                      alt="한서대학교"
+                      width={200}
+                      height={55}
+                    />
+                  </div>
+                </div>
+                <div key="2">
+                  <div className="flex items-center text-lg font-semibold hover:scale-110">
+                    <Image
+                      src={'/image/logo0.jpg'}
+                      alt="국토부"
+                      width={194}
+                      height={72}
+                    />
+                  </div>
+                </div>
+                <div key="3">
+                  <div className="flex items-center text-lg font-semibold hover:scale-110">
+                    <Image
+                      src={'/image/logo1.png'}
+                      alt="서산시"
+                      width={200}
+                      height={50}
+                    />
+                  </div>
+                </div>
+                <div key="4">
+                  <div className="flex items-center text-lg font-semibold hover:scale-110">
+                    <Image
+                      src={'/image/logo2.jpg'}
+                      alt="태안군"
+                      width={140}
+                      height={80}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <SiteFooter />
       </div>
 

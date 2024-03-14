@@ -5,3 +5,62 @@
 html {
   scroll-snap-type: y mandatory;
 }
+
+@layer utilities {
+  .pause {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes scroll-5 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-12rem * 5));
+  }
+}
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, #fff 0%, #ffffff00 50%);
+  content: '';
+  z-index: 2;
+  position: absolute;
+  height: 100%;
+  width: 10rem;
+  pointer-events: none;
+}
+.dark .slider::before,
+.dark .slider::after {
+  background: linear-gradient(to right, #111 0%, #11111100 25%);
+  content: '';
+  z-index: 2;
+  position: absolute;
+  height: 100%;
+  width: 10rem;
+  pointer-events: none;
+  /* background:transparent; */
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track-5 {
+  animation: scroll-5 24s linear infinite;
+  display: flex;
+  width: calc(12rem * 5 * 2);
+}
+.slider .slide-track-10 {
+  animation: scroll-5 24s linear infinite;
+  display: flex;
+  width: calc(12rem * 10 * 2);
+}
