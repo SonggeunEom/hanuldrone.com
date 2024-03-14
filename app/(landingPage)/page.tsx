@@ -293,17 +293,13 @@ export default function Home() {
 
       <ScrollWrapper>
         <div className="mr-8">
-          <div>TODO: 기업 비전이 들어갈 자리</div>
-          <div>TODO: 기업 비전이 들어갈 자리</div>
-          <div>TODO: 기업 비전이 들어갈 자리</div>
-          <div>TODO: 기업 비전이 들어갈 자리</div>
-          <div>TODO: 기업 비전이 들어갈 자리</div>
-          <div>TODO: 기업 비전이 들어갈 자리</div>
-          <div>TODO: 기업 비전이 들어갈 자리</div>
-          <div>TODO: 기업 비전이 들어갈 자리</div>
-          <div>TODO: 기업 비전이 들어갈 자리</div>
-          <div>TODO: 기업 비전이 들어갈 자리</div>
-          <div>TODO: 기업 비전이 들어갈 자리</div>
+          <div>비전</div>
+          <div>→ 신속, 정확하게 이동하여</div>
+          <div>안전하고 완벽하게 임무를 달성한다</div>
+          <div>{''}</div>
+          <br />
+          <div>핵심 가치</div>
+          <div>→ 창의, 열정, 혁신, 협동, 재미</div>
         </div>
         <Timeline
           items={[
