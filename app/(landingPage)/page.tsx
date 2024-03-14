@@ -7,14 +7,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 import Balancer from 'react-wrap-balancer';
 import { ScrollWrapper } from './scrollSections/scroll-wrapper';
-import { Card, CardContent } from '@/components/ui/card';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
+
 import { Icons } from '@/components/icons';
 import { SiteFooter } from '@/components/layouts/site-footer';
 
@@ -31,12 +24,6 @@ export default function Home() {
   });
 
   const transformedYProgress = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
-
-  const carouselTextList = [
-    '시설물 안전 점검',
-    '의약품 배송',
-    '화재 감시 및 진압',
-  ];
 
   const solutionsInfo = [
     {
@@ -105,45 +92,13 @@ export default function Home() {
             <Balancer
               as="h1"
               className={cn(
-                'relative text-xl font-extrabold',
-                'sm:text-3xl md:text-4xl lg:text-5xl',
+                'relative text-xl font-bold',
+                'sm:text-2xl md:text-3xl lg:text-4xl',
               )}
             >
               검증된 드론 솔루션을 제공 드립니다.
             </Balancer>
           </div>
-          {/* <Carousel className="w-full max-w-full">
-            <CarouselContent>
-              {Array.from({ length: 3 }).map((_, index) => (
-                <CarouselItem key={index} className="basis-2/5">
-                  <div>
-                    <Card>
-                      <CardContent className="aspect-video flex-col items-center justify-center pt-6">
-                        <div className="relative inline-block h-full max-h-96 w-full max-w-lg">
-                          <Image
-                            alt="Carousel image"
-                            src={`/image/carousel${index}.png`}
-                            className="object-cover"
-                            fill
-                          />
-                        </div>
-                        <p
-                          className={cn(
-                            'text-center text-xs',
-                            'sm:text-md md:text-lg lg:text-xl',
-                          )}
-                        >
-                          {carouselTextList[index]}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel> */}{' '}
           <main
             className={cn(
               'my-2 grid grid-cols-1 gap-4 text-center',
