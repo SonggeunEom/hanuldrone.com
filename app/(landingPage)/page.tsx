@@ -70,7 +70,7 @@ export default function Home() {
           </video>
           <div
             className={cn(
-              'absolute left-[7%] top-[55%] text-lg font-bold text-stone-300',
+              'absolute left-[7%] top-[55%] text-lg font-extrabold text-stone-300',
               'sm:text-2xl md:text-3xl lg:top-[62%] lg:text-5xl xl:top-[66%]',
             )}
           >
@@ -118,18 +118,18 @@ export default function Home() {
                       src={solution.imgSrc}
                       alt={solution.imgText}
                       width={640}
-                      height={400}
+                      height={427}
                     />
                     <div
                       className={cn(
-                        'absolute left-1/2 top-1/2 h-1/2 w-1/2 translate-x-[-50%] translate-y-[-66%] bg-stone-800/75',
+                        'absolute left-1/2 top-1/2 h-1/2 w-1/2 translate-x-[-50%] translate-y-[-75%] bg-stone-800/75',
                         'flex items-center justify-center',
                       )}
                     >
                       <p
                         className={cn(
-                          'text-2xl font-extrabold text-white',
-                          'lg:text-3xl xl:text-4xl',
+                          'text-lg font-bold text-white',
+                          'sm: text-xl md:text-2xl lg:text-3xl',
                         )}
                       >
                         {solution.imgText}
