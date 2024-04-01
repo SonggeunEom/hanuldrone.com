@@ -55,12 +55,12 @@ html {
   top: 0;
 }
 .slider .slide-track-5 {
-  animation: scroll-5 24s linear infinite;
+  animation: scroll-5 30s linear infinite;
   display: flex;
   width: calc(12rem * 5 * 2);
 }
 .slider .slide-track-10 {
-  animation: scroll-5 24s linear infinite;
+  animation: scroll-5 30s linear infinite;
   display: flex;
   width: calc(12rem * 10 * 2);
 }

@@ -431,7 +431,12 @@ export default function Home() {
               PARTNER
             </span>
             <div className="slider">
-              <div className="slide-track-5 hover:pause mt-6 grid grid-cols-3 items-center justify-around gap-8 sm:grid-cols-4 md:grid-cols-5">
+              <div
+                className={cn(
+                  'slide-track-5 hover:pause mt-6 grid grid-cols-3 items-center justify-around gap-16',
+                  'sm:grid-cols-4 md:grid-cols-5',
+                )}
+              >
                 <div key="0">
                   <div className="flex items-center text-lg font-semibold hover:scale-110">
                     <Image
