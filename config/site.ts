@@ -23,7 +23,7 @@ export const siteConfig = {
       items: [],
     },
     {
-      title: '팀 소개(임시)',
+      title: '팀 소개',
       href: '/team',
       items: [],
     },
