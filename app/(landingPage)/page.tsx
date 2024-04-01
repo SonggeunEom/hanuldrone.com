@@ -172,6 +172,119 @@ export default function Home() {
         </div>
       </ScrollWrapper>
 
+      <ScrollWrapper>
+        <div className="mr-8">
+          <div>
+            <Balancer
+              as="h2"
+              className={cn(
+                'max-w-[42rem] text-lg font-bold leading-normal tracking-wider text-muted-foreground backdrop-blur-sm',
+                'sm:text-xl md:text-2xl lg:text-3xl',
+              )}
+            >
+              VISION
+            </Balancer>
+          </div>
+          <div className="mt-16 space-y-24">
+            <div className="flex">
+              <div className="h-28 w-28 rounded-xl bg-teal-200/50 px-4 py-3">
+                <Image
+                  alt="icon0"
+                  width={78}
+                  src={'/image/icon0.png'}
+                  height={78}
+                />
+              </div>
+              <div className="ml-3 backdrop-blur-sm">
+                <h3 className="text-xl font-semibold">목표 지향</h3>
+                <p className="mt-2 whitespace-pre-line text-base text-stone-500">
+                  신속하게 분석하며 오차를 줄여
+                  {'\n'}완벽한 임무를 달성합니다.
+                </p>
+              </div>
+            </div>
+            <div className="flex">
+              <div className="backdrop-blur-sm">
+                <h3 className="text-xl font-semibold">창의와 혁신</h3>
+                <p className="mt-2 whitespace-pre-line text-base text-stone-500">
+                  창의적이고 혁신적인 아이디어를 위해
+                  {'\n'}다양한 방법을 모색 합니다.
+                </p>
+              </div>
+              <div className="ml-4 h-28 w-28 rounded-xl bg-amber-400/40 px-7 py-3">
+                <Image
+                  src={'/image/icon1.png'}
+                  alt="icon0"
+                  width={58}
+                  height={62}
+                />
+              </div>
+            </div>
+            <div className="flex">
+              <div className="h-28 w-28 rounded-xl bg-red-500/40 p-4">
+                <Image
+                  src={'/image/icon2.png'}
+                  alt="icon0"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="ml-3 backdrop-blur-sm">
+                <h3 className="text-xl font-semibold">협동과 소통</h3>
+                <p className="mt-2 whitespace-pre-line text-base text-stone-500">
+                  가장 큰 임팩트를 낼 수 있는 목표를 향해
+                  {'\n'}자유롭게 소통하며 몰입합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="ml-6">
+            <Balancer
+              as="h2"
+              className={cn(
+                'max-w-[42rem] text-lg font-bold leading-normal tracking-wider text-muted-foreground backdrop-blur-sm',
+                'sm:text-xl md:text-2xl lg:text-3xl',
+              )}
+            >
+              HISTORY
+            </Balancer>
+          </div>
+          <Timeline
+            items={[
+              {
+                dateTime: '2024-03',
+                label: '디지털 물류서비스 실증 사업',
+                description: 'VTOL 의약품 배송 분야\n국토교통부 주관',
+              },
+              {
+                dateTime: '2024-03',
+                label: '드론 실증 도시 구축 사업(서산)',
+                description: '물품 배송 분야 사업자 선정',
+              },
+              {
+                dateTime: '2023-12',
+                label: '벤처기업 인증',
+                description: '중소벤처기업부',
+              },
+              {
+                dateTime: '2023-04',
+                label: '드론 실증도시 구축 사업(서산, 태안)',
+                description:
+                  '초기 화재 감시 및 진압 분야\nVTOL 의약품 배송 분야',
+              },
+              {
+                dateTime: '2023-03',
+                label: '청년창업사관학교 기업 선정',
+                description: '중소벤처기업부',
+              },
+              { dateTime: '2022-12', label: '한울드론 법인 설립' },
+            ]}
+          />
+        </div>
+      </ScrollWrapper>
+
       <ScrollWrapper ref={ref}>
         <div className="relative h-1/2 w-3/4 space-y-12">
           <div
@@ -289,139 +402,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </ScrollWrapper>
-
-      <ScrollWrapper>
-        <div className="mr-8">
-          <div>
-            <Balancer
-              as="h2"
-              className={cn(
-                'max-w-[42rem] text-lg font-bold leading-normal tracking-wider text-muted-foreground backdrop-blur-sm',
-                'sm:text-xl md:text-2xl lg:text-3xl',
-              )}
-            >
-              VISION
-            </Balancer>
-          </div>
-          <div className="mt-16 space-y-24">
-            <div className="flex">
-              <div className="h-28 w-28 rounded-xl bg-teal-200/50 px-4 py-3">
-                <Image
-                  alt="icon0"
-                  width={78}
-                  src={'/image/icon0.png'}
-                  height={78}
-                />
-              </div>
-              <div className="ml-3 backdrop-blur-sm">
-                <h3 className="text-xl font-semibold">목표 지향</h3>
-                <p className="mt-2 whitespace-pre-line text-base text-stone-500">
-                  신속하게 분석하며 오차를 줄여
-                  {'\n'}완벽한 임무를 달성합니다.
-                </p>
-              </div>
-            </div>
-            <div className="flex">
-              <div className="backdrop-blur-sm">
-                <h3 className="text-xl font-semibold">창의와 혁신</h3>
-                <p className="mt-2 whitespace-pre-line text-base text-stone-500">
-                  창의적이고 혁신적인 아이디어를 위해
-                  {'\n'}다양한 방법을 모색 합니다.
-                </p>
-              </div>
-              <div className="ml-4 h-28 w-28 rounded-xl bg-amber-400/40 px-7 py-3">
-                <Image
-                  src={'/image/icon1.png'}
-                  alt="icon0"
-                  width={58}
-                  height={62}
-                />
-              </div>
-            </div>
-            <div className="flex">
-              <div className="h-28 w-28 rounded-xl bg-red-500/40 p-4">
-                <Image
-                  src={'/image/icon2.png'}
-                  alt="icon0"
-                  width={80}
-                  height={80}
-                />
-              </div>
-              <div className="ml-3 backdrop-blur-sm">
-                <h3 className="text-xl font-semibold">협동과 소통</h3>
-                <p className="mt-2 whitespace-pre-line text-base text-stone-500">
-                  가장 큰 임팩트를 낼 수 있는 목표를 향해
-                  {'\n'}자유롭게 소통하며 몰입합니다.
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* <div>비전</div>
-          <div>→ 신속, 정확하게 이동하여</div>
-          <div>안전하고 완벽하게 임무를 달성한다</div>
-          <div>{''}</div>
-          <br />
-          <div>핵심 가치</div>
-          <div>→ 창의, 열정, 혁신, 협동, 재미</div> */}
-        </div>
-        <div>
-          <div className="ml-6">
-            <Balancer
-              as="h2"
-              className={cn(
-                'max-w-[42rem] text-lg font-bold leading-normal tracking-wider text-muted-foreground backdrop-blur-sm',
-                'sm:text-xl md:text-2xl lg:text-3xl',
-              )}
-            >
-              HISTORY
-            </Balancer>
-          </div>
-          <Timeline
-            items={[
-              {
-                dateTime: '2024-03',
-                label: '디지털 물류서비스 실증 사업',
-                description: 'VTOL 의약품 배송 분야\n국토교통부 주관',
-              },
-              {
-                dateTime: '2024-03',
-                label: '드론 실증 도시 구축 사업(서산)',
-                description: '물품 배송 분야 사업자 선정',
-              },
-              {
-                dateTime: '2023-12',
-                label: '벤처기업 인증',
-                description: '중소벤처기업부',
-              },
-              {
-                dateTime: '2023-04',
-                label: '드론 실증도시 구축 사업(서산, 태안)',
-                description:
-                  '초기 화재 감시 및 진압 분야\nVTOL 의약품 배송 분야',
-              },
-              {
-                dateTime: '2023-03',
-                label: '청년창업사관학교 기업 선정',
-                description: '중소벤처기업부',
-              },
-              { dateTime: '2022-12', label: '한울드론 법인 설립' },
-            ]}
-          />
-        </div>
-        {/* Fire fighter drone ai generated video */}
-        {/* <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className={cn(
-            'ml-2 max-w-[140px] object-cover',
-            'sm:enter lg:p md:max-w-xs',
-          )}
-        >
-          <source src="/video/fire-fighting-drone.mp4" type="video/mp4" />
-        </video> */}
       </ScrollWrapper>
 
       <div className="snap-end">
