@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
+import { Analytics } from '@vercel/analytics/react';
+
 import { fontMono, pretendard } from '@/lib/font';
 import { cn } from '@/lib/utils';
 
@@ -31,6 +33,7 @@ export default function RootLayout({
       >
         <SiteHeader />
         {children}
+        <Analytics />
       </body>
     </html>
   );
