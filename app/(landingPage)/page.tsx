@@ -173,7 +173,7 @@ export default function Home() {
       </ScrollWrapper>
 
       <ScrollWrapper>
-        <div className="mr-8">
+        <div className={cn('mr-2', 'md:mr-8')}>
           <div>
             <Balancer
               as="h2"
@@ -185,9 +185,14 @@ export default function Home() {
               VISION
             </Balancer>
           </div>
-          <div className="mt-16 space-y-24">
+          <div className={cn('mt-16 space-y-12', 'md:space-y-24')}>
             <div className="flex">
-              <div className="h-28 w-28 rounded-xl bg-teal-200/50 px-4 py-3">
+              <div
+                className={cn(
+                  'h-14 w-14 rounded-xl bg-teal-200/50 px-4 py-3',
+                  'md:h-28 md:w-28',
+                )}
+              >
                 <Image
                   alt="icon0"
                   width={78}
@@ -196,22 +201,41 @@ export default function Home() {
                 />
               </div>
               <div className="ml-3 backdrop-blur-sm">
-                <h3 className="text-xl font-semibold">목표 지향</h3>
-                <p className="mt-2 whitespace-pre-line text-base text-stone-500">
-                  신속하게 분석하며 오차를 줄여
-                  {'\n'}완벽한 임무를 달성합니다.
+                <h3 className={cn('text-sm font-semibold', 'md:text-xl')}>
+                  목표 지향
+                </h3>
+                <p
+                  className={cn(
+                    'mt-2 whitespace-pre-line text-xs text-stone-500',
+                    'md:text-base',
+                  )}
+                >
+                  신속, 정확하게 이동하여 안전하고
+                  {'\n'}완벽하게 임무를 달성합니다.
                 </p>
               </div>
             </div>
             <div className="flex">
               <div className="backdrop-blur-sm">
-                <h3 className="text-xl font-semibold">창의와 혁신</h3>
-                <p className="mt-2 whitespace-pre-line text-base text-stone-500">
+                <h3 className={cn('text-sm font-semibold', 'md:text-xl')}>
+                  창의와 혁신
+                </h3>
+                <p
+                  className={cn(
+                    'mt-2 whitespace-pre-line text-xs text-stone-500',
+                    'md:text-base',
+                  )}
+                >
                   창의적이고 혁신적인 아이디어를 위해
-                  {'\n'}다양한 방법을 모색 합니다.
+                  {'\n'}다양한 방법을 모색합니다.
                 </p>
               </div>
-              <div className="ml-4 h-28 w-28 rounded-xl bg-amber-400/40 px-7 py-3">
+              <div
+                className={cn(
+                  'ml-4 h-14 w-14 rounded-xl bg-amber-400/40 px-7 py-3',
+                  'md:h-28 md:w-28',
+                )}
+              >
                 <Image
                   src={'/image/icon1.png'}
                   alt="icon0"
@@ -221,7 +245,12 @@ export default function Home() {
               </div>
             </div>
             <div className="flex">
-              <div className="h-28 w-28 rounded-xl bg-red-500/40 p-4">
+              <div
+                className={cn(
+                  'h-28 w-28 rounded-xl bg-red-500/40 p-4',
+                  'md:h-28 md:w-28',
+                )}
+              >
                 <Image
                   src={'/image/icon2.png'}
                   alt="icon0"
@@ -230,8 +259,15 @@ export default function Home() {
                 />
               </div>
               <div className="ml-3 backdrop-blur-sm">
-                <h3 className="text-xl font-semibold">협동과 소통</h3>
-                <p className="mt-2 whitespace-pre-line text-base text-stone-500">
+                <h3 className={cn('text-sm font-semibold', 'md:text-xl')}>
+                  협동과 소통
+                </h3>
+                <p
+                  className={cn(
+                    'mt-2 whitespace-pre-line text-xs text-stone-500',
+                    'md:text-base',
+                  )}
+                >
                   가장 큰 임팩트를 낼 수 있는 목표를 향해
                   {'\n'}자유롭게 소통하며 몰입합니다.
                 </p>
@@ -408,7 +444,7 @@ export default function Home() {
         <div className="mx-auto my-8 text-center lg:w-3/4">
           <div className="mt-36 text-center lg:mt-32">
             <span className="text-lg font-semibold tracking-wider text-stone-600 dark:text-white">
-              PARTNER
+              PARTNERS
             </span>
             <div className="slider">
               <div
