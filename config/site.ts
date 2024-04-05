@@ -22,12 +22,54 @@ export const siteConfig = {
       href: '/blog',
       items: [],
     },
-    {
-      title: '팀 소개',
-      href: '/team',
-      items: [],
-    },
   ],
+  landingPage: {
+    solutionsInfo: [
+      {
+        imgSrc: '/image/solution0.jpg',
+        imgText: '시설물 안전 점검',
+        title: '결함 탐지 드론',
+        description:
+          'AI 영상 처리를 통한 손상 및 결함을 탐지합니다. GPS 단절 환경에서도 무사히 임무를 완수합니다.',
+      },
+      {
+        imgSrc: '/image/solution1.jpg',
+        imgText: '의약품 배송',
+        title: '화물 배송 드론',
+        description:
+          '화물 보호 기능을 갖춘 배송함을 탑재하여 다양한 화물을 배송합니다.',
+      },
+      {
+        imgSrc: '/image/solution2.jpg',
+        imgText: '3번 솔루션',
+        title: '3번 드론',
+        description: '3번 솔루션 소개',
+      },
+      {
+        imgSrc: '/image/solution3.jpg',
+        imgText: '화재 감시 및 진압',
+        title: ' eVTOL 소방 드론',
+        description:
+          '드론 기반 광범위 화재를 감시하며 소화탄 투하하여 초동 진압에 나섭니다.',
+      },
+    ],
+    membersInfo: [
+      {
+        imgSrc: '/image/member-ceo.png',
+        name: '엄송근',
+        position: 'Founder & CEO',
+        introduction:
+          '한마디가 들어갈 자리입니다.한마디가 들어갈 자리입니다.한마디가 들어갈 자리입니다.한마디가 들어갈 자리입니다.한마디가 들어갈 자리입니다.한마디가 들어갈',
+      },
+      {
+        imgSrc: '/image/member-cto.png',
+        name: '김정훈',
+        position: 'Co-Founder & CTO',
+        introduction:
+          '한서대 항공시스템공학 석사 학위를 취득하고, 한울드론을 공동창업 하였습니다. 편대비행 및 충돌회피 기술을 연구 하였으며 다양한 실증에 참여한 이력이 있습니다.',
+      },
+    ],
+  },
   footer: {
     ceo: '엄송근',
     address: '충청남도 태안군 남면 곰섬로 236-49, 216호(창업2관)',
