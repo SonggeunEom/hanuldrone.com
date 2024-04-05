@@ -7,12 +7,12 @@ export const siteConfig = {
       submenus: [
         {
           title: '화재 진압',
-          description: '화재를 감시하고 초기에 진압하는 eVTOL 드론',
+          description: '화재 초기 감시 및 진압 드론',
           href: '/solutions/#fire-monitoring',
         },
         {
           title: '수색 및 감시',
-          description: '인명 수색 및 야간 연안 감시 드론',
+          description: '인명 수색 및 주/야간 연안 감시 드론',
           href: '/solutions/#surveillance',
         },
       ],
@@ -30,14 +30,14 @@ export const siteConfig = {
         imgText: '시설물 안전 점검',
         title: '결함 탐지 드론',
         description:
-          'AI 영상 처리를 통한 손상 및 결함을 탐지합니다. GPS 단절 환경에서도 무사히 임무를 완수합니다.',
+          'GNSS 단절 환경에서도 AI 영상 처리를 통한 손상 및 결함 탐지 드론.',
       },
       {
         imgSrc: '/image/solution1.jpg',
-        imgText: '의약품 배송',
-        title: '화물 배송 드론',
+        imgText: 'VTOL 배송',
+        title: '물류 및 의약품 배송 드론',
         description:
-          '화물 보호 기능을 갖춘 배송함을 탑재하여 다양한 화물을 배송합니다.',
+          '화물 보호 기능을 갖춘 배송함을 탑재하여 다양한 화물 배송.',
       },
       {
         imgSrc: '/image/solution2.jpg',
@@ -48,9 +48,9 @@ export const siteConfig = {
       {
         imgSrc: '/image/solution3.jpg',
         imgText: '화재 감시 및 진압',
-        title: ' eVTOL 소방 드론',
+        title: ' 소방 드론',
         description:
-          '드론 기반 광범위 화재를 감시하며 소화탄 투하하여 초동 진압에 나섭니다.',
+          '초기 화재를 감시하며 소화탄 투하를 통한 초동 진압.',
       },
     ],
     membersInfo: [
