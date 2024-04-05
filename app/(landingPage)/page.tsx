@@ -16,6 +16,8 @@ import { fadeIn } from '@/lib/motion';
 import Image from 'next/image';
 import Timeline from '@/components/timeline';
 
+import { siteConfig } from '@/config/site';
+
 export default function Home() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -24,36 +26,6 @@ export default function Home() {
   });
 
   const transformedYProgress = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
-
-  const solutionsInfo = [
-    {
-      imgSrc: '/image/solution0.jpg',
-      imgText: '시설물 안전 점검',
-      title: '결함 탐지 드론',
-      description:
-        'AI 영상 처리를 통한 손상 및 결함을 탐지합니다. GPS 단절 환경에서도 무사히 임무를 완수합니다.',
-    },
-    {
-      imgSrc: '/image/solution1.jpg',
-      imgText: '의약품 배송',
-      title: '화물 배송 드론',
-      description:
-        '화물 보호 기능을 갖춘 배송함을 탑재하여 다양한 화물을 배송합니다.',
-    },
-    {
-      imgSrc: '/image/solution2.jpg',
-      imgText: '3번 솔루션',
-      title: '3번 드론',
-      description: '3번 솔루션 소개',
-    },
-    {
-      imgSrc: '/image/solution3.jpg',
-      imgText: '화재 감시 및 진압',
-      title: ' eVTOL 소방 드론',
-      description:
-        '드론 기반 광범위 화재를 감시하며 소화탄 투하하여 초동 진압에 나섭니다.',
-    },
-  ];
 
   return (
     <main>
@@ -105,7 +77,7 @@ export default function Home() {
               'lg:grid-cols-2',
             )}
           >
-            {solutionsInfo.map((solution, index) => {
+            {siteConfig.landingPage.solutionsInfo.map((solution, index) => {
               return (
                 <div key={index} className="backdrop-blur-sm">
                   <div
@@ -363,43 +335,48 @@ export default function Home() {
           </motion.div>
           <div>
             <div className="flex space-x-4">
-              <div className="flex basis-1/2 backdrop-blur-sm">
-                <div>
-                  <Image
-                    src={'/image/member-ceo.png'}
-                    alt={'caricature of member'}
-                    width={360}
-                    height={360}
-                  />
-                </div>
-                <div>
-                  <p
-                    className={cn(
-                      'whitespace-nowrap text-sm font-bold',
-                      'sm:text-lg md:text-xl lg:text-2xl',
-                    )}
-                  >
-                    엄송근
-                  </p>
-                  <p
-                    className={cn(
-                      'text-sm text-stone-600',
-                      'sm:text-md md:text-lg lg:text-xl',
-                    )}
-                  >
-                    Founder & CEO
-                  </p>
-                  <p
-                    className={cn(
-                      'mt-4 text-sm',
-                      'sm:text-md md:text-lg lg:text-xl',
-                    )}
-                  >
-                    TODO: 한마디가 들어갈 자리입니다.
-                  </p>
-                </div>
-              </div>
-              <div className="flex basis-1/2 backdrop-blur-sm">
+              {siteConfig.landingPage.membersInfo.map((member, index) => {
+                return (
+                  <div key={index} className="flex basis-1/2 backdrop-blur-sm">
+                    <div>
+                      <Image
+                        src={member.imgSrc}
+                        alt={'caricature of member'}
+                        width={360}
+                        height={360}
+                      />
+                    </div>
+                    <div>
+                      <p
+                        className={cn(
+                          'whitespace-nowrap text-sm font-bold',
+                          'sm:text-lg md:text-xl lg:text-2xl',
+                        )}
+                      >
+                        {member.name}
+                      </p>
+                      <p
+                        className={cn(
+                          'text-sm text-stone-600',
+                          'sm:text-md md:text-lg lg:text-xl',
+                        )}
+                      >
+                        {member.position}
+                      </p>
+                      <p
+                        className={cn(
+                          'mt-4 text-sm',
+                          'sm:text-md md:text-lg lg:text-xl',
+                        )}
+                      >
+                        {member.introduction}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+
+              {/* <div className="flex basis-1/2 backdrop-blur-sm">
                 <div>
                   <Image
                     src={'/image/member-cto.png'}
@@ -434,7 +411,7 @@ export default function Home() {
                     TODO: 한마디가 들어갈 자리입니다.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
