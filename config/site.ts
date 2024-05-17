@@ -24,7 +24,9 @@ export const siteConfig = {
     },
   ],
   landingPage: {
+    heroMessage: '어둠을 밝히는 혁신의 빛, (주) 한울드론',
     solutionsInfo: [
+      // ⚠ 3개 이상 작성 시 PC 레이아웃 깨짐!
       {
         imgSrc: '/image/solution0.jpg',
         imgText: '시설물 안전 점검',
@@ -39,12 +41,6 @@ export const siteConfig = {
         description:
           '화물 보호 기능을 갖춘 배송함을 탑재하여 다양한 화물을 배송합니다.',
       },
-      // {
-      //   imgSrc: '/image/solution2.jpg',
-      //   imgText: '3번 솔루션',
-      //   title: '3번 드론',
-      //   description: '3번 솔루션 소개',
-      // },
       {
         imgSrc: '/image/solution3.jpg',
         imgText: '화재 감시 및 진압',
@@ -52,6 +48,62 @@ export const siteConfig = {
         description:
           '드론 기반 광범위 화재를 감시하며 소화탄 투하하여 초동 진압에 나섭니다.',
       },
+    ],
+    vision: [
+      {
+        imgSrc: '/image/icon0.png',
+        style: 'bg-teal-200/50 px-4 py-3',
+        title: '목표 지향',
+        description:
+          '신속, 정확하게 이동하여 안전하고 완벽하게 임무를 달성합니다.',
+      },
+      {
+        imgSrc: '/image/icon1.png',
+        style: 'bg-amber-400/40 px-7 py-3',
+        title: '창의와 혁신',
+        description:
+          '창의적이고 혁신적인 아이디어를 위해 다양한 방법을 모색합니다.',
+      },
+      {
+        imgSrc: '/image/icon2.png',
+        style: 'bg-red-500/40 p-4',
+        title: '협동과 소통',
+        description:
+          '가장 큰 임팩트를 낼 수 있는 목표를 향해 자유롭게 소통하며 몰입합니다.',
+      },
+    ],
+    history: [
+      {
+        dateTime: '2024-04',
+        label: '국방벤처기업 인증',
+        description: '국방기술진흥연구소 주관',
+      },
+      {
+        dateTime: '2024-03',
+        label: '디지털 물류서비스 실증 사업',
+        description: 'VTOL 의약품 배송 분야\n국토교통부 주관',
+      },
+      {
+        dateTime: '2024-03',
+        label: '드론 실증 도시 구축 사업(서산)',
+        description: '물품 배송 분야 사업자 선정',
+      },
+      {
+        dateTime: '2023-12',
+        label: '벤처기업 인증',
+        description: '중소벤처기업부',
+      },
+      {
+        dateTime: '2023-04',
+        label: '드론 실증도시 구축 사업(서산, 태안)',
+        description: '초기 화재 감시 및 진압 분야\nVTOL 의약품 배송 분야',
+      },
+      {
+        dateTime: '2023-03',
+        label: '청년창업사관학교 기업 선정',
+        description: '중소벤처기업부',
+      },
+      { dateTime: '2022-12', label: '한울드론 법인 설립' },
     ],
     membersInfo: [
       {

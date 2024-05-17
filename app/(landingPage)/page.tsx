@@ -46,7 +46,7 @@ export default function Home() {
               'sm:text-2xl md:text-3xl lg:top-[56%] lg:text-5xl xl:top-[62%]',
             )}
           >
-            어둠을 밝히는 혁신의 빛, (주) 한울드론
+            {siteConfig.landingPage.heroMessage}
           </div>
           <Icons.chevronsDown className="mx-auto mt-10 h-8 w-8 animate-bounce" />
         </div>
@@ -160,88 +160,34 @@ export default function Home() {
               VISION
             </Balancer>
           </div>
-          <div className={cn('mt-4 w-3/4 space-y-2 md:mt-16', 'md:space-y-20')}>
-            <div className="flex">
-              <div
-                className={cn(
-                  'relative hidden h-24 w-20 rounded-xl bg-teal-200/50 px-4 py-3',
-                  'lg:block',
-                )}
-              >
-                <Image
-                  src={'/image/icon0.png'}
-                  alt="icon0"
-                  fill
-                  className="px-1 py-4"
-                />
-              </div>
-              <div className="backdrop-blur-sm lg:ml-3">
-                <h3 className={cn('text-sm font-semibold', 'md:text-xl')}>
-                  목표 지향
-                </h3>
-                <p
-                  className={cn('mt-2 text-xs text-stone-500', 'md:text-base')}
-                >
-                  신속, 정확하게 이동하여 안전하고 완벽하게 임무를 달성합니다.
-                </p>
-              </div>
-            </div>
-            <div className="flex lg:flex-row-reverse">
-              <div
-                className={cn(
-                  'relative ml-4 hidden h-24 w-20 rounded-xl bg-amber-400/40 px-7 py-3',
-                  'lg:block',
-                )}
-              >
-                <Image
-                  src={'/image/icon1.png'}
-                  alt="icon1"
-                  fill
-                  className="p-4"
-                />
-              </div>
-              <div className="backdrop-blur-sm">
-                <h3
-                  className={cn(
-                    'text-sm font-semibold',
-                    'md:text-xl lg:text-right',
-                  )}
-                >
-                  창의와 혁신
-                </h3>
-                <p
-                  className={cn('mt-2 text-xs text-stone-500', 'md:text-base')}
-                >
-                  창의적이고 혁신적인 아이디어를 위해 다양한 방법을 모색합니다.
-                </p>
-              </div>
-            </div>
-            <div className="flex">
-              <div
-                className={cn(
-                  'relative hidden h-24 w-20 rounded-xl bg-red-500/40 p-4',
-                  'lg:block',
-                )}
-              >
-                <Image
-                  src={'/image/icon2.png'}
-                  alt="icon2"
-                  fill
-                  className="px-1 py-4"
-                />
-              </div>
-              <div className="backdrop-blur-sm lg:ml-3">
-                <h3 className={cn('text-sm font-semibold', 'md:text-xl')}>
-                  협동과 소통
-                </h3>
-                <p
-                  className={cn('mt-2 text-xs text-stone-500', 'md:text-base')}
-                >
-                  가장 큰 임팩트를 낼 수 있는 목표를 향해 자유롭게 소통하며
-                  몰입합니다.
-                </p>
-              </div>
-            </div>
+          <div className={cn('mt-4 w-3/4 space-y-2', 'md:mt-16 md:space-y-20')}>
+            {siteConfig.landingPage.vision.map((item) => {
+              return (
+                <div className="flex even:flex-row-reverse even:text-right">
+                  <div
+                    className={cn(
+                      `relative hidden h-24 w-20 rounded-xl px-4 py-3 ${item.style}`,
+                      'lg:block',
+                    )}
+                  >
+                    <Image
+                      src={item.imgSrc}
+                      alt="icon"
+                      fill
+                      className="px-1 py-2"
+                    />
+                  </div>
+                  <div className="backdrop-blur-sm lg:ml-3">
+                    <h3 className="text-sm font-semibold md:text-xl">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-xs text-stone-500 md:text-base">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className="h-[43%] w-1/3 md:h-2/3">
@@ -257,42 +203,7 @@ export default function Home() {
             </Balancer>
           </div>
           <div className="flex justify-center">
-            <Timeline
-              items={[
-                {
-                  dateTime: '2024-04',
-                  label: '국방벤처기업 인증',
-                  description: '국방기술진흥연구소 주관',
-                },
-                {
-                  dateTime: '2024-03',
-                  label: '디지털 물류서비스 실증 사업',
-                  description: 'VTOL 의약품 배송 분야\n국토교통부 주관',
-                },
-                {
-                  dateTime: '2024-03',
-                  label: '드론 실증 도시 구축 사업(서산)',
-                  description: '물품 배송 분야 사업자 선정',
-                },
-                {
-                  dateTime: '2023-12',
-                  label: '벤처기업 인증',
-                  description: '중소벤처기업부',
-                },
-                {
-                  dateTime: '2023-04',
-                  label: '드론 실증도시 구축 사업(서산, 태안)',
-                  description:
-                    '초기 화재 감시 및 진압 분야\nVTOL 의약품 배송 분야',
-                },
-                {
-                  dateTime: '2023-03',
-                  label: '청년창업사관학교 기업 선정',
-                  description: '중소벤처기업부',
-                },
-                { dateTime: '2022-12', label: '한울드론 법인 설립' },
-              ]}
-            />
+            <Timeline items={siteConfig.landingPage.history} />
           </div>
         </div>
       </ScrollWrapper>
