@@ -53,7 +53,7 @@ export default function Home() {
       </ScrollWrapper>
 
       <ScrollWrapper ref={ref}>
-        <div className="relative h-3/4 w-3/4">
+        <div className="relative h-1/2 w-3/4">
           <div
             className={cn(
               'relative z-[-1] flex place-items-center after:absolute after:-z-20',
@@ -73,8 +73,8 @@ export default function Home() {
           </div>
           <main
             className={cn(
-              'my-2 grid grid-cols-1 gap-4 text-center',
-              'lg:grid-cols-2',
+              'my-2 grid grid-cols-1 gap-x-4 gap-y-12 text-center',
+              'lg:gap-4',
             )}
           >
             {siteConfig.landingPage.solutionsInfo.map((solution, index) => {
@@ -82,7 +82,7 @@ export default function Home() {
                 <div key={index} className="backdrop-blur-sm">
                   <div
                     className={cn(
-                      'max-h-[120px] overflow-hidden',
+                      'max-h-[180px] overflow-hidden',
                       'sm:max-h-[320px]',
                     )}
                   >
@@ -94,14 +94,15 @@ export default function Home() {
                     />
                     <div
                       className={cn(
-                        'absolute left-1/2 top-1/2 h-1/2 w-1/2 translate-x-[-50%] translate-y-[-75%] bg-stone-800/75',
+                        'absolute left-1/2 top-1/4 h-1/3 w-1/2 translate-x-[-50%] translate-y-[-75%] bg-stone-800/75',
                         'flex items-center justify-center',
+                        'sm:top-1/2 sm:h-1/2',
                       )}
                     >
                       <p
                         className={cn(
-                          'text-lg font-bold text-white',
-                          'sm: text-xl md:text-2xl lg:text-3xl',
+                          'text-sm font-bold text-white',
+                          'sm:text-lg md:text-xl lg:text-2xl',
                         )}
                       >
                         {solution.imgText}
@@ -110,13 +111,15 @@ export default function Home() {
                   </div>
                   <h3
                     className={cn(
-                      'text-xl font-bold tracking-widest',
-                      'lg:text-2xl xl:text-3xl',
+                      'text-lg font-bold tracking-widest',
+                      'lg:text-xl xl:text-2xl',
                     )}
                   >
                     {solution.title}
                   </h3>
-                  <p className="text-stone-600">{solution.description}</p>
+                  <p className={cn('text-sm text-stone-600', 'sm:text-base')}>
+                    {solution.description}
+                  </p>
                 </div>
               );
             })}
@@ -178,12 +181,11 @@ export default function Home() {
                 </h3>
                 <p
                   className={cn(
-                    'mt-2 whitespace-pre-line text-xs text-stone-500',
+                    'mt-2 w-1/3 text-xs text-stone-500',
                     'md:text-base',
                   )}
                 >
-                  신속, 정확하게 이동하여 안전하고
-                  {'\n'}완벽하게 임무를 달성합니다.
+                  신속, 정확하게 이동하여 안전하고 완벽하게 임무를 달성합니다.
                 </p>
               </div>
             </div>
@@ -193,13 +195,9 @@ export default function Home() {
                   창의와 혁신
                 </h3>
                 <p
-                  className={cn(
-                    'mt-2 whitespace-pre-line text-xs text-stone-500',
-                    'md:text-base',
-                  )}
+                  className={cn('mt-2 text-xs text-stone-500', 'md:text-base')}
                 >
-                  창의적이고 혁신적인 아이디어를 위해
-                  {'\n'}다양한 방법을 모색합니다.
+                  창의적이고 혁신적인 아이디어를 위해 다양한 방법을 모색합니다.
                 </p>
               </div>
               <div
@@ -236,12 +234,12 @@ export default function Home() {
                 </h3>
                 <p
                   className={cn(
-                    'mt-2 whitespace-pre-line text-xs text-stone-500',
+                    'mt-2 w-1/3 text-xs text-stone-500',
                     'md:text-base',
                   )}
                 >
-                  가장 큰 임팩트를 낼 수 있는 목표를 향해
-                  {'\n'}자유롭게 소통하며 몰입합니다.
+                  가장 큰 임팩트를 낼 수 있는 목표를 향해 자유롭게 소통하며
+                  몰입합니다.
                 </p>
               </div>
             </div>
