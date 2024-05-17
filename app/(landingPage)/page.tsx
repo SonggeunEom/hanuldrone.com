@@ -42,8 +42,8 @@ export default function Home() {
           </video>
           <div
             className={cn(
-              'absolute left-[7%] top-[55%] text-lg font-extrabold text-stone-300',
-              'sm:text-2xl md:text-3xl lg:top-[62%] lg:text-5xl xl:top-[66%]',
+              'absolute left-[7%] top-[54%] text-lg font-extrabold text-stone-300',
+              'sm:text-2xl md:text-3xl lg:top-[56%] lg:text-5xl xl:top-[62%]',
             )}
           >
             어둠을 밝히는 혁신의 빛, (주) 한울드론
@@ -53,7 +53,7 @@ export default function Home() {
       </ScrollWrapper>
 
       <ScrollWrapper ref={ref}>
-        <div className="relative h-1/2 w-3/4">
+        <div className="relative mx-4 h-[43%] lg:h-3/4 lg:w-3/4">
           <div
             className={cn(
               'relative z-[-1] flex place-items-center after:absolute after:-z-20',
@@ -73,8 +73,8 @@ export default function Home() {
           </div>
           <main
             className={cn(
-              'my-2 grid grid-cols-1 gap-x-4 gap-y-12 text-center',
-              'lg:gap-4',
+              'my-2 grid grid-cols-2 gap-x-4 gap-y-2 text-center',
+              'lg:grid-cols-1 lg:gap-4',
             )}
           >
             {siteConfig.landingPage.solutionsInfo.map((solution, index) => {
@@ -82,27 +82,27 @@ export default function Home() {
                 <div key={index} className="backdrop-blur-sm">
                   <div
                     className={cn(
-                      'max-h-[180px] overflow-hidden',
+                      'flex max-h-[180px] justify-center overflow-hidden',
                       'sm:max-h-[320px]',
                     )}
                   >
                     <Image
                       src={solution.imgSrc}
                       alt={solution.imgText}
-                      width={640}
-                      height={427}
+                      width={360}
+                      height={240}
                     />
                     <div
                       className={cn(
-                        'absolute left-1/2 top-1/4 h-1/3 w-1/2 translate-x-[-50%] translate-y-[-75%] bg-stone-800/75',
+                        'absolute translate-y-[-55%] bg-transparent',
                         'flex items-center justify-center',
-                        'sm:top-1/2 sm:h-1/2',
+                        'sm:top-[45%] lg:h-1/3 lg:w-fit lg:bg-stone-800/75',
                       )}
                     >
                       <p
                         className={cn(
-                          'text-sm font-bold text-white',
-                          'sm:text-lg md:text-xl lg:text-2xl',
+                          'hidden font-bold text-white',
+                          'lg:text-2x4 lg:m-2 lg:block',
                         )}
                       >
                         {solution.imgText}
@@ -111,13 +111,13 @@ export default function Home() {
                   </div>
                   <h3
                     className={cn(
-                      'text-lg font-bold tracking-widest',
+                      'text-sm font-bold tracking-widest',
                       'lg:text-xl xl:text-2xl',
                     )}
                   >
                     {solution.title}
                   </h3>
-                  <p className={cn('text-sm text-stone-600', 'sm:text-base')}>
+                  <p className={cn('text-xs text-stone-600', 'sm:text-sm')}>
                     {solution.description}
                   </p>
                 </div>
@@ -148,50 +148,65 @@ export default function Home() {
       </ScrollWrapper>
 
       <ScrollWrapper>
-        <div className={cn('mr-2', 'md:mr-8')}>
-          <div>
+        <div className={cn('h-[43%] w-1/3 md:h-1/2')}>
+          <div className="flex justify-center">
             <Balancer
               as="h2"
               className={cn(
-                'max-w-[42rem] text-lg font-bold leading-normal tracking-wider text-muted-foreground backdrop-blur-sm',
+                'text-lg font-bold leading-normal tracking-wider text-muted-foreground backdrop-blur-sm',
                 'sm:text-xl md:text-2xl lg:text-3xl',
               )}
             >
               VISION
             </Balancer>
           </div>
-          <div className={cn('mt-16 space-y-12', 'md:space-y-24')}>
+          <div className={cn('mt-4 w-3/4 space-y-2 md:mt-16', 'md:space-y-20')}>
             <div className="flex">
               <div
                 className={cn(
-                  'h-14 w-14 rounded-xl bg-teal-200/50 px-4 py-3',
-                  'md:h-28 md:w-28',
+                  'relative hidden h-24 w-20 rounded-xl bg-teal-200/50 px-4 py-3',
+                  'lg:block',
                 )}
               >
                 <Image
-                  alt="icon0"
-                  width={78}
                   src={'/image/icon0.png'}
-                  height={78}
+                  alt="icon0"
+                  fill
+                  className="px-1 py-4"
                 />
               </div>
-              <div className="ml-3 backdrop-blur-sm">
+              <div className="backdrop-blur-sm lg:ml-3">
                 <h3 className={cn('text-sm font-semibold', 'md:text-xl')}>
                   목표 지향
                 </h3>
                 <p
-                  className={cn(
-                    'mt-2 w-1/3 text-xs text-stone-500',
-                    'md:text-base',
-                  )}
+                  className={cn('mt-2 text-xs text-stone-500', 'md:text-base')}
                 >
                   신속, 정확하게 이동하여 안전하고 완벽하게 임무를 달성합니다.
                 </p>
               </div>
             </div>
-            <div className="flex">
+            <div className="flex lg:flex-row-reverse">
+              <div
+                className={cn(
+                  'relative ml-4 hidden h-24 w-20 rounded-xl bg-amber-400/40 px-7 py-3',
+                  'lg:block',
+                )}
+              >
+                <Image
+                  src={'/image/icon1.png'}
+                  alt="icon1"
+                  fill
+                  className="p-4"
+                />
+              </div>
               <div className="backdrop-blur-sm">
-                <h3 className={cn('text-sm font-semibold', 'md:text-xl')}>
+                <h3
+                  className={cn(
+                    'text-sm font-semibold',
+                    'md:text-xl lg:text-right',
+                  )}
+                >
                   창의와 혁신
                 </h3>
                 <p
@@ -200,43 +215,27 @@ export default function Home() {
                   창의적이고 혁신적인 아이디어를 위해 다양한 방법을 모색합니다.
                 </p>
               </div>
-              <div
-                className={cn(
-                  'ml-4 h-14 w-14 rounded-xl bg-amber-400/40 px-7 py-3',
-                  'md:h-28 md:w-28',
-                )}
-              >
-                <Image
-                  src={'/image/icon1.png'}
-                  alt="icon0"
-                  width={58}
-                  height={62}
-                />
-              </div>
             </div>
             <div className="flex">
               <div
                 className={cn(
-                  'h-28 w-28 rounded-xl bg-red-500/40 p-4',
-                  'md:h-28 md:w-28',
+                  'relative hidden h-24 w-20 rounded-xl bg-red-500/40 p-4',
+                  'lg:block',
                 )}
               >
                 <Image
                   src={'/image/icon2.png'}
-                  alt="icon0"
-                  width={80}
-                  height={80}
+                  alt="icon2"
+                  fill
+                  className="px-1 py-4"
                 />
               </div>
-              <div className="ml-3 backdrop-blur-sm">
+              <div className="backdrop-blur-sm lg:ml-3">
                 <h3 className={cn('text-sm font-semibold', 'md:text-xl')}>
                   협동과 소통
                 </h3>
                 <p
-                  className={cn(
-                    'mt-2 w-1/3 text-xs text-stone-500',
-                    'md:text-base',
-                  )}
+                  className={cn('mt-2 text-xs text-stone-500', 'md:text-base')}
                 >
                   가장 큰 임팩트를 낼 수 있는 목표를 향해 자유롭게 소통하며
                   몰입합니다.
@@ -245,8 +244,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div>
-          <div className="ml-6">
+        <div className="h-[43%] w-1/3 md:h-2/3">
+          <div className="flex justify-center">
             <Balancer
               as="h2"
               className={cn(
@@ -257,42 +256,49 @@ export default function Home() {
               HISTORY
             </Balancer>
           </div>
-          <Timeline
-            items={[
-              {
-                dateTime: '2024-03',
-                label: '디지털 물류서비스 실증 사업',
-                description: 'VTOL 의약품 배송 분야\n국토교통부 주관',
-              },
-              {
-                dateTime: '2024-03',
-                label: '드론 실증 도시 구축 사업(서산)',
-                description: '물품 배송 분야 사업자 선정',
-              },
-              {
-                dateTime: '2023-12',
-                label: '벤처기업 인증',
-                description: '중소벤처기업부',
-              },
-              {
-                dateTime: '2023-04',
-                label: '드론 실증도시 구축 사업(서산, 태안)',
-                description:
-                  '초기 화재 감시 및 진압 분야\nVTOL 의약품 배송 분야',
-              },
-              {
-                dateTime: '2023-03',
-                label: '청년창업사관학교 기업 선정',
-                description: '중소벤처기업부',
-              },
-              { dateTime: '2022-12', label: '한울드론 법인 설립' },
-            ]}
-          />
+          <div className="flex justify-center">
+            <Timeline
+              items={[
+                {
+                  dateTime: '2024-04',
+                  label: '국방벤처기업 인증',
+                  description: '국방기술진흥연구소 주관',
+                },
+                {
+                  dateTime: '2024-03',
+                  label: '디지털 물류서비스 실증 사업',
+                  description: 'VTOL 의약품 배송 분야\n국토교통부 주관',
+                },
+                {
+                  dateTime: '2024-03',
+                  label: '드론 실증 도시 구축 사업(서산)',
+                  description: '물품 배송 분야 사업자 선정',
+                },
+                {
+                  dateTime: '2023-12',
+                  label: '벤처기업 인증',
+                  description: '중소벤처기업부',
+                },
+                {
+                  dateTime: '2023-04',
+                  label: '드론 실증도시 구축 사업(서산, 태안)',
+                  description:
+                    '초기 화재 감시 및 진압 분야\nVTOL 의약품 배송 분야',
+                },
+                {
+                  dateTime: '2023-03',
+                  label: '청년창업사관학교 기업 선정',
+                  description: '중소벤처기업부',
+                },
+                { dateTime: '2022-12', label: '한울드론 법인 설립' },
+              ]}
+            />
+          </div>
         </div>
       </ScrollWrapper>
 
       <ScrollWrapper ref={ref}>
-        <div className="relative h-1/2 w-3/4 space-y-12">
+        <div className="relative h-1/3 w-3/4 space-y-4 md:space-y-12">
           <div
             className={cn(
               'relative z-[-1] flex place-items-center after:absolute after:-z-20',
@@ -364,7 +370,7 @@ export default function Home() {
                       <p
                         className={cn(
                           'mt-4 text-sm',
-                          'sm:text-md md:text-lg lg:text-xl',
+                          'md:text-md sm:text-sm lg:text-xl',
                         )}
                       >
                         {member.introduction}
@@ -431,14 +437,14 @@ export default function Home() {
                 <div key="0">
                   <div className="flex items-center text-lg font-semibold hover:scale-110">
                     <Image
-                      src={'/image/logo4.png'}
-                      alt="에어온"
-                      width={190}
-                      height={50}
+                      src={'/image/logo4.jpg'}
+                      alt="국방부"
+                      width={200}
+                      height={75}
                     />
                   </div>
                 </div>
-                <div key="1">
+                <div key="0">
                   <div className="flex items-center text-lg font-semibold hover:scale-110">
                     <Image
                       src={'/image/logo3.jpg'}
@@ -448,7 +454,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <div key="2">
+                <div key="1">
                   <div className="flex items-center text-lg font-semibold hover:scale-110">
                     <Image
                       src={'/image/logo0.jpg'}
@@ -458,7 +464,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <div key="3">
+                <div key="2">
                   <div className="flex items-center text-lg font-semibold hover:scale-110">
                     <Image
                       src={'/image/logo1.png'}
@@ -481,14 +487,14 @@ export default function Home() {
                 <div key="0">
                   <div className="flex items-center text-lg font-semibold hover:scale-110">
                     <Image
-                      src={'/image/logo4.png'}
-                      alt="에어온"
-                      width={190}
-                      height={50}
+                      src={'/image/logo4.jpg'}
+                      alt="국방부"
+                      width={240}
+                      height={100}
                     />
                   </div>
                 </div>
-                <div key="1">
+                <div key="0">
                   <div className="flex items-center text-lg font-semibold hover:scale-110">
                     <Image
                       src={'/image/logo3.jpg'}
@@ -498,7 +504,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <div key="2">
+                <div key="1">
                   <div className="flex items-center text-lg font-semibold hover:scale-110">
                     <Image
                       src={'/image/logo0.jpg'}
@@ -508,7 +514,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <div key="3">
+                <div key="2">
                   <div className="flex items-center text-lg font-semibold hover:scale-110">
                     <Image
                       src={'/image/logo1.png'}
@@ -518,7 +524,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <div key="4">
+                <div key="3">
                   <div className="flex items-center text-lg font-semibold hover:scale-110">
                     <Image
                       src={'/image/logo2.jpg'}

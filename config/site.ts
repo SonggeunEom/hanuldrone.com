@@ -39,12 +39,12 @@ export const siteConfig = {
         description:
           '화물 보호 기능을 갖춘 배송함을 탑재하여 다양한 화물을 배송합니다.',
       },
-      {
-        imgSrc: '/image/solution2.jpg',
-        imgText: '3번 솔루션',
-        title: '3번 드론',
-        description: '3번 솔루션 소개',
-      },
+      // {
+      //   imgSrc: '/image/solution2.jpg',
+      //   imgText: '3번 솔루션',
+      //   title: '3번 드론',
+      //   description: '3번 솔루션 소개',
+      // },
       {
         imgSrc: '/image/solution3.jpg',
         imgText: '화재 감시 및 진압',
@@ -59,7 +59,7 @@ export const siteConfig = {
         name: '엄송근',
         position: 'Founder & CEO',
         introduction:
-          '한마디가 들어갈 자리입니다.한마디가 들어갈 자리입니다.한마디가 들어갈 자리입니다.한마디가 들어갈 자리입니다.한마디가 들어갈 자리입니다.한마디가 들어갈',
+          '한서대 항공시스템공학 석사 학위를 취득하고, 한울드론을 공동창업 하였습니다. 인공지능 기술을 연구 하였습니다.',
       },
       {
         imgSrc: '/image/member-cto.png',
