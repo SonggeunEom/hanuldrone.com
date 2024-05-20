@@ -43,7 +43,7 @@ export const siteConfig = {
       },
       {
         imgSrc: '/image/icon1.png',
-        style: 'bg-amber-400/40 px-7 py-3',
+        style: 'ml-3 bg-amber-400/40',
         title: '창의와 혁신',
         description:
           '창의적이고 혁신적인 아이디어를 위해 다양한 방법을 모색합니다.',

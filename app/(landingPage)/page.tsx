@@ -166,7 +166,7 @@ export default function Home() {
                 <div className="flex even:flex-row-reverse even:text-right">
                   <div
                     className={cn(
-                      `relative hidden h-24 w-20 rounded-xl px-4 py-3 ${item.style}`,
+                      `relative hidden h-24 w-24 rounded-xl px-4 py-3 ${item.style}`,
                       'lg:block',
                     )}
                   >
@@ -174,7 +174,7 @@ export default function Home() {
                       src={item.imgSrc}
                       alt="icon"
                       fill
-                      className="px-1 py-2"
+                      className="px-1.5 py-3"
                     />
                   </div>
                   <div className="backdrop-blur-sm lg:ml-3">

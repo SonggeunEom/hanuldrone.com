@@ -9,6 +9,15 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'bg-teal-200/50',
+    'px-4',
+    'py-3',
+    'bg-amber-400/40',
+    'ml-3',
+    'bg-red-500/40',
+    'p-4',
+  ],
   prefix: '',
   theme: {
     container: {
