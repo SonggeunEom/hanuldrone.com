@@ -124,26 +124,6 @@ export default function Home() {
               );
             })}
           </main>
-          {/* <motion.p
-            variants={fadeIn({
-              direction: 'up',
-              type: 'tween',
-              delay: 0.2,
-              duration: 0.5,
-            })}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.25 }}
-          >
-            <Balancer
-              className={cn(
-                'text-md max-w-[42rem] leading-normal text-muted-foreground backdrop-blur-sm',
-                'sm:text-lg md:text-xl lg:text-2xl',
-              )}
-            >
-              여러 성공적인 실증 사업 추진 경험을 바탕으로 인정 받고 있습니다.
-            </Balancer>
-          </motion.p> */}
         </div>
       </ScrollWrapper>
 
@@ -290,43 +270,6 @@ export default function Home() {
                   </div>
                 );
               })}
-
-              {/* <div className="flex basis-1/2 backdrop-blur-sm">
-                <div>
-                  <Image
-                    src={'/image/member-cto.png'}
-                    alt={'caricature of member'}
-                    width={360}
-                    height={360}
-                  />
-                </div>
-                <div>
-                  <p
-                    className={cn(
-                      'whitespace-nowrap text-sm font-bold',
-                      'sm:text-lg md:text-xl lg:text-2xl',
-                    )}
-                  >
-                    김정훈
-                  </p>
-                  <p
-                    className={cn(
-                      'text-xs text-stone-600',
-                      'sm:text-md md:text-lg lg:text-xl',
-                    )}
-                  >
-                    Co-Founder & CTO
-                  </p>
-                  <p
-                    className={cn(
-                      'mt-4 text-sm',
-                      'sm:text-md md:text-lg lg:text-xl',
-                    )}
-                  >
-                    TODO: 한마디가 들어갈 자리입니다.
-                  </p>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>

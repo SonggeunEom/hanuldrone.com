@@ -5,36 +5,6 @@ import { SiteFooter } from '@/components/layouts/site-footer';
 
 import { siteConfig } from '@/config/site';
 
-const solutionsInfo = [
-  {
-    imgSrc: '/image/solution0.jpg',
-    imgText: '시설물 안전 점검',
-    title: '결함 탐지 드론',
-    description:
-      'AI 영상 처리를 통한 손상 및 결함을 탐지합니다. GPS 단절 환경에서도 무사히 임무를 완수합니다.',
-  },
-  {
-    imgSrc: '/image/solution1.jpg',
-    imgText: '의약품 배송',
-    title: '화물 배송 드론',
-    description:
-      '화물 보호 기능을 갖춘 배송함을 탑재하여 다양한 화물을 배송합니다.',
-  },
-  {
-    imgSrc: '/image/solution2.jpg',
-    imgText: '3번 솔루션',
-    title: '3번 드론',
-    description: '3번 솔루션 소개',
-  },
-  {
-    imgSrc: '/image/solution3.jpg',
-    imgText: '화재 감시 및 진압',
-    title: ' eVTOL 소방 드론',
-    description:
-      '드론 기반 광범위 화재를 감시하며 소화탄 투하하여 초동 진압에 나섭니다.',
-  },
-];
-
 export default function Solutions() {
   return (
     <div>
