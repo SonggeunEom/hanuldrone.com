@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { SiteFooter } from '@/components/layouts/site-footer';
 
+import { siteConfig } from '@/config/site';
+
 const solutionsInfo = [
   {
     imgSrc: '/image/solution0.jpg',
@@ -35,8 +37,8 @@ const solutionsInfo = [
 
 export default function Solutions() {
   return (
-    <div className="container">
-      <div className="container flex items-center bg-white">
+    <div>
+      <div className="flex items-center bg-white">
         <div className="flex w-full items-center">
           <Image
             src="/image/drone-drawing.jpg"
@@ -56,35 +58,36 @@ export default function Solutions() {
       </div>
       <main
         className={cn(
-          'my-8 grid grid-cols-1 gap-8 text-center',
-          'lg:grid-cols-2',
+          'my-2 grid grid-cols-2 gap-x-4 gap-y-2 text-center',
+          'lg:grid-cols-1 lg:gap-4',
         )}
       >
-        {solutionsInfo.map((solution, index) => {
+        {siteConfig.landingPage.solutionsInfo.map((solution, index) => {
           return (
             <div key={index} className="backdrop-blur-sm">
               <div
                 className={cn(
-                  'max-h-[220px] overflow-hidden',
-                  'sm:max-h-[400px]',
+                  'flex max-h-[180px] justify-center overflow-hidden',
+                  'sm:max-h-[320px]',
                 )}
               >
                 <Image
                   src={solution.imgSrc}
                   alt={solution.imgText}
-                  width={640}
-                  height={400}
+                  width={360}
+                  height={240}
                 />
                 <div
                   className={cn(
-                    'absolute left-1/2 top-1/2 h-1/2 w-1/2 translate-x-[-50%] translate-y-[-66%] bg-stone-800/75',
+                    'absolute translate-y-[-55%] bg-transparent',
                     'flex items-center justify-center',
+                    'sm:top-[45%] lg:h-1/3 lg:w-fit lg:bg-stone-800/75',
                   )}
                 >
                   <p
                     className={cn(
-                      'text-2xl font-extrabold text-white',
-                      'lg:text-3xl xl:text-4xl',
+                      'hidden font-bold text-white',
+                      'lg:text-2x4 lg:m-2 lg:block',
                     )}
                   >
                     {solution.imgText}
@@ -93,13 +96,15 @@ export default function Solutions() {
               </div>
               <h3
                 className={cn(
-                  'text-xl font-bold tracking-widest',
-                  'lg:text-2xl xl:text-3xl',
+                  'text-sm font-bold tracking-widest',
+                  'lg:text-xl xl:text-2xl',
                 )}
               >
                 {solution.title}
               </h3>
-              <p className="text-stone-600">{solution.description}</p>
+              <p className={cn('text-xs text-stone-600', 'sm:text-sm')}>
+                {solution.description}
+              </p>
             </div>
           );
         })}
