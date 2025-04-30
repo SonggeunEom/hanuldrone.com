@@ -2,6 +2,11 @@ export const siteConfig = {
   name: '한울드론',
   mainMenus: [
     {
+      title: '메인',
+      href: '/',
+      items: [],
+    },
+    {
       title: '솔루션',
       href: '/solutions',
       items: [],
@@ -13,7 +18,6 @@ export const siteConfig = {
     },
   ],
   landingPage: {
-    heroMessage: '어둠을 밝히는 혁신의 빛, (주) 한울드론',
     solutionsInfo: [
       // ⚠ 3개 이상 작성 시 PC 레이아웃 깨짐!
       {

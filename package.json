@@ -10,6 +10,7 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
+    "@channel.io/channel-web-sdk-loader": "^2.0.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-label": "^2.0.2",

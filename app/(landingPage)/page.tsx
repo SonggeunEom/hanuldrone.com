@@ -1,58 +1,174 @@
 'use client';
 
 import React from 'react';
-import { useRef } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import Balancer from 'react-wrap-balancer';
 import { ScrollWrapper } from './scrollSections/scroll-wrapper';
 
 import { Icons } from '@/components/icons';
 import { SiteFooter } from '@/components/layouts/site-footer';
+import { Button } from '@/components/ui/button';
 
 import { cn } from '@/lib/utils';
 import { fadeIn } from '@/lib/motion';
 import Image from 'next/image';
 import Timeline from '@/components/timeline';
+import Link from 'next/link';
 
 import { siteConfig } from '@/config/site';
 
 export default function Home() {
   const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start', 'end end'],
-  });
 
-  const transformedYProgress = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
+  const [activeSection, setActiveSection] = useState('hero');
+
+  // 섹션 ID 배열을 useMemo로 감싸기
+  const sections = useMemo(
+    () => ['hero', 'solutions', 'vision', 'team', 'partners'],
+    [],
+  );
+
+  // 파트너 로고 데이터
+  const partnerLogos = useMemo(
+    () => [
+      { src: '/image/logo4.jpg', alt: '국방부', width: 200, height: 75 },
+      { src: '/image/logo3.jpg', alt: '한서대학교', width: 200, height: 55 },
+      { src: '/image/logo0.jpg', alt: '국토부', width: 194, height: 72 },
+      { src: '/image/logo1.png', alt: '서산시', width: 200, height: 50 },
+      { src: '/image/logo2.jpg', alt: '태안군', width: 140, height: 80 },
+      { src: '/image/logo4.jpg', alt: '국방부', width: 240, height: 100 },
+      { src: '/image/logo3.jpg', alt: '한서대학교', width: 200, height: 55 },
+      { src: '/image/logo0.jpg', alt: '국토부', width: 194, height: 72 },
+      { src: '/image/logo1.png', alt: '서산시', width: 200, height: 50 },
+      { src: '/image/logo2.jpg', alt: '태안군', width: 140, height: 80 },
+    ],
+    [],
+  );
+
+  // 섹션 이동 함수
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView();
+    }
+  };
+
+  // 현재 활성화된 섹션 감지
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentPosition = window.scrollY;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (!element) continue;
+
+        const top = element.offsetTop;
+        const height = element.offsetHeight;
+
+        if (
+          currentPosition >= top - 450 &&
+          currentPosition < top + height - 400
+        ) {
+          setActiveSection(section);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [sections]);
 
   return (
-    <main>
-      <ScrollWrapper ref={ref}>
-        <div>
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="-mt-[198px] min-h-[480px] object-cover"
-          >
-            <source src="/video/hero.mp4" type="video/mp4" />
-          </video>
-          <div
-            className={cn(
-              'absolute left-[7%] top-[54%] text-lg font-extrabold text-stone-300',
-              'sm:text-2xl md:text-3xl lg:top-[56%] lg:text-5xl xl:top-[62%]',
-            )}
-          >
-            {siteConfig.landingPage.heroMessage}
+    <main className="overflow-x-hidden">
+      <div className="fixed right-6 top-1/2 z-50 flex -translate-y-1/2 flex-col gap-4">
+        {sections.map((section) => (
+          <button
+            key={section}
+            onClick={() => scrollToSection(section)}
+            className={`h-3 w-3 rounded-full transition-all duration-300 ${
+              activeSection === section
+                ? 'scale-125 bg-blue-600'
+                : 'bg-gray-300 hover:bg-gray-400'
+            }`}
+            aria-label={`스크롤 ${section} 섹션으로 이동`}
+          />
+        ))}
+      </div>
+
+      <ScrollWrapper ref={ref} className="items-start" id="hero">
+        <div className="w-full">
+          <div className="bg-gradient-to-b from-blue-500 to-blue-700 py-36 opacity-80 md:py-52">
+            <div className="absolute inset-0 z-0">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                className="text-blue-100"
+              >
+                <defs>
+                  <pattern
+                    id="grid"
+                    width="40"
+                    height="40"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path
+                      d="M 40 0 L 0 0 0 40"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="0.5"
+                    />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+              </svg>
+            </div>
+            <div className="container relative z-10 px-4 md:px-6">
+              <div className="mx-auto max-w-3xl text-center">
+                <h1 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-6xl">
+                  혁신적인 드론 솔루션
+                </h1>
+                <p className="text-md mb-8 text-blue-100 md:text-lg">
+                  <span className="block">
+                    최첨단 드론 기술로 산업의 미래를 선도합니다.
+                  </span>
+                  <span className="block">
+                    한울드론의 솔루션으로 새로운 가능성을 경험하세요.
+                  </span>
+                </p>
+                <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                  <Button
+                    variant="outline"
+                    className="w-32 border-blue-700 bg-white text-blue-700 hover:border-white hover:bg-blue-800 hover:text-white sm:w-auto"
+                  >
+                    <Link href="/contact">데모 요청하기</Link>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="w-32 border-blue-700 text-blue-700 hover:border-white hover:bg-blue-800 hover:text-white sm:w-auto"
+                  >
+                    <Link href="/main/company">자세히 알아보기</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
-          <Icons.chevronsDown className="mx-auto mt-10 h-8 w-8 animate-bounce" />
+
+          <button
+            onClick={() => scrollToSection('solutions')}
+            className="mx-auto block cursor-pointer"
+            aria-label="다음 섹션으로 스크롤"
+          >
+            <Icons.chevronsDown className="mx-auto mt-10 h-8 w-8 animate-bounce" />
+          </button>
         </div>
       </ScrollWrapper>
 
-      <ScrollWrapper ref={ref}>
+      <ScrollWrapper ref={ref} id="solutions">
         <div className="relative mx-4 h-[43%] lg:h-3/4 lg:w-3/4">
           <div
             className={cn(
@@ -83,7 +199,7 @@ export default function Home() {
                   <div
                     className={cn(
                       'flex max-h-[180px] justify-center overflow-hidden',
-                      'sm:max-h-[320px]',
+                      'sm:max-h-[200px]',
                     )}
                   >
                     <Image
@@ -127,7 +243,7 @@ export default function Home() {
         </div>
       </ScrollWrapper>
 
-      <ScrollWrapper>
+      <ScrollWrapper id="vision">
         <div className={cn('h-[43%] w-1/3 md:h-1/2')}>
           <div className="flex justify-center">
             <Balancer
@@ -141,9 +257,12 @@ export default function Home() {
             </Balancer>
           </div>
           <div className={cn('mt-4 w-3/4 space-y-2', 'md:mt-16 md:space-y-20')}>
-            {siteConfig.landingPage.vision.map((item) => {
+            {siteConfig.landingPage.vision.map((item, index) => {
               return (
-                <div className="flex even:flex-row-reverse even:text-right">
+                <div
+                  key={index}
+                  className="flex even:flex-row-reverse even:text-right"
+                >
                   <div
                     className={cn(
                       `relative hidden h-24 w-24 rounded-xl px-4 py-3 ${item.style}`,
@@ -188,7 +307,7 @@ export default function Home() {
         </div>
       </ScrollWrapper>
 
-      <ScrollWrapper ref={ref}>
+      <ScrollWrapper ref={ref} id="team">
         <div className="relative h-1/3 w-3/4 space-y-4 md:space-y-12">
           <div
             className={cn(
@@ -275,7 +394,7 @@ export default function Home() {
         </div>
       </ScrollWrapper>
 
-      <div className="snap-end">
+      <div className="snap-end" id="partners">
         <div className="mx-auto my-8 text-center lg:w-3/4">
           <div className="mt-36 text-center lg:mt-32">
             <span className="text-lg font-semibold tracking-wider text-stone-600 dark:text-white">
@@ -288,128 +407,23 @@ export default function Home() {
                   'sm:grid-cols-4 md:grid-cols-5',
                 )}
               >
-                <div key="0">
-                  <div className="flex items-center text-lg font-semibold hover:scale-110">
-                    <Image
-                      src={'/image/logo4.jpg'}
-                      alt="국방부"
-                      width={200}
-                      height={75}
-                    />
+                {partnerLogos.map((logo, index) => (
+                  <div key={index}>
+                    <div className="flex items-center text-lg font-semibold hover:scale-110">
+                      <Image
+                        src={logo.src}
+                        alt={logo.alt}
+                        width={logo.width}
+                        height={logo.height}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div key="0">
-                  <div className="flex items-center text-lg font-semibold hover:scale-110">
-                    <Image
-                      src={'/image/logo3.jpg'}
-                      alt="한서대학교"
-                      width={200}
-                      height={55}
-                    />
-                  </div>
-                </div>
-                <div key="1">
-                  <div className="flex items-center text-lg font-semibold hover:scale-110">
-                    <Image
-                      src={'/image/logo0.jpg'}
-                      alt="국토부"
-                      width={194}
-                      height={72}
-                    />
-                  </div>
-                </div>
-                <div key="2">
-                  <div className="flex items-center text-lg font-semibold hover:scale-110">
-                    <Image
-                      src={'/image/logo1.png'}
-                      alt="서산시"
-                      width={200}
-                      height={50}
-                    />
-                  </div>
-                </div>
-                <div key="4">
-                  <div className="flex items-center text-lg font-semibold hover:scale-110">
-                    <Image
-                      src={'/image/logo2.jpg'}
-                      alt="태안군"
-                      width={140}
-                      height={80}
-                    />
-                  </div>
-                </div>
-                <div key="0">
-                  <div className="flex items-center text-lg font-semibold hover:scale-110">
-                    <Image
-                      src={'/image/logo4.jpg'}
-                      alt="국방부"
-                      width={240}
-                      height={100}
-                    />
-                  </div>
-                </div>
-                <div key="0">
-                  <div className="flex items-center text-lg font-semibold hover:scale-110">
-                    <Image
-                      src={'/image/logo3.jpg'}
-                      alt="한서대학교"
-                      width={200}
-                      height={55}
-                    />
-                  </div>
-                </div>
-                <div key="1">
-                  <div className="flex items-center text-lg font-semibold hover:scale-110">
-                    <Image
-                      src={'/image/logo0.jpg'}
-                      alt="국토부"
-                      width={194}
-                      height={72}
-                    />
-                  </div>
-                </div>
-                <div key="2">
-                  <div className="flex items-center text-lg font-semibold hover:scale-110">
-                    <Image
-                      src={'/image/logo1.png'}
-                      alt="서산시"
-                      width={200}
-                      height={50}
-                    />
-                  </div>
-                </div>
-                <div key="3">
-                  <div className="flex items-center text-lg font-semibold hover:scale-110">
-                    <Image
-                      src={'/image/logo2.jpg'}
-                      alt="태안군"
-                      width={140}
-                      height={80}
-                    />
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
         <SiteFooter />
-      </div>
-
-      <div>
-        <figure className="fixed bottom-9 right-3">
-          <svg width="50" height="50" viewBox="0 0 100 100">
-            <motion.circle
-              cx="50"
-              cy="50"
-              r="30"
-              pathLength="1"
-              className="fill-sky-400 stroke-orange-300 stroke-[8px]"
-              style={{
-                pathLength: transformedYProgress,
-              }}
-            />
-          </svg>
-        </figure>
       </div>
     </main>
   );
